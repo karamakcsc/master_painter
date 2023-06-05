@@ -43,13 +43,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "register_date",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Register Date",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_4",
    "fieldtype": "Column Break"
   },
@@ -132,12 +125,18 @@
    "options": "Painter",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "register_date",
+   "fieldtype": "Date",
+   "label": "Register Date",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-05 17:41:00.543413",
+ "modified": "2023-06-05 23:20:33.173450",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
