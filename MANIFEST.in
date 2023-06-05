@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include master_painter *.css
+recursive-include master_painter *.csv
+recursive-include master_painter *.html
+recursive-include master_painter *.ico
+recursive-include master_painter *.js
+recursive-include master_painter *.json
+recursive-include master_painter *.md
+recursive-include master_painter *.png
+recursive-include master_painter *.py
+recursive-include master_painter *.svg
+recursive-include master_painter *.txt
+recursive-exclude master_painter *.pyc
