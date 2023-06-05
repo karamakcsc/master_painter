@@ -43,7 +43,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-06-05 17:44:24.580897",
+ "modified": "2023-06-05 17:45:39.363168",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter",
@@ -53,7 +53,7 @@
  "shortcuts": [
   {
    "doc_view": "List",
-   "label": "DocType",
+   "label": "Painter",
    "link_to": "Painter",
    "type": "DocType"
   },
