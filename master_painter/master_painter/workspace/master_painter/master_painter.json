@@ -43,13 +43,13 @@
    "type": "Link"
   }
  ],
- "modified": "2023-06-05 17:35:28.690866",
- "modified_by": "msiam@kcsc.com.jo",
+ "modified": "2023-06-05 17:44:24.580897",
+ "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter",
  "owner": "msiam@kcsc.com.jo",
  "pin_to_bottom": 0,
- "pin_to_top": 0,
+ "pin_to_top": 1,
  "shortcuts": [
   {
    "doc_view": "List",
