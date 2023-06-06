@@ -32,7 +32,7 @@ def get_painter_no(mobile_number=None, first_name=None):
 
 url = "http://ugc.kcsc.com.jo/api/method/master_painter.api.get_painter_no"
 query_params = {
-    'mobile_number': 'null'  # Adjust the value as per your requirements
+    'mobile_number': '%s'  # Adjust the value as per your requirements
 }
 
 headers = {
