@@ -8,8 +8,20 @@ import requests , json
 
 @frappe.whitelist()
 def get_painter_no(mobile_number=None, first_name=None):
-    return frappe.db.sql("""SELECT tp.mobile_number,tp.first_name
-                            FROM `tabPainter` tp
-                            WHERE tp.mobile_number = %s
-                            ORDER BY tp.creation DESC;""",
-                            (mobile_number,first_name),as_dict=True)
+    # return frappe.db.sql("""SELECT tp.mobile_number,tp.first_name
+    #                         FROM `tabPainter` tp
+    #                         WHERE tp.mobile_number = %s
+    #                         ORDER BY tp.creation DESC;""",
+    #                         (mobile_number,first_name),as_dict=True)
+
+
+url = "http://ugc.kcsc.com.jo/api/method/master_painter.api.get_painter_no?mobile_number=null"
+
+headers = {
+  'Authorization': 'Basic NzJkNGZhMjUzNmZhMWIxOjgwYjY1NWYzNmY2MWFjYw==',
+  'Cookie': 'full_name=Guest; sid=Guest; system_user=no; user_id=Guest; user_image='
+}
+
+response = requests.get(url, headers=headers)
+
+print(response.text)
