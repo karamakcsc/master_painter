@@ -7,7 +7,7 @@ import requests , json
 
 
 @frappe.whitelist()
-def get_painter_no(mobile_number=None, first_name-None):
+def get_painter_no(mobile_number=None, first_name=None):
     return frappe.db.sql("""SELECT tp.mobile_number,tp.first_name
                             FROM `tabPainter` tp
                             WHERE tp.mobile_number = %s
