@@ -42,8 +42,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Mobile Number",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "column_break_4",
@@ -151,7 +150,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-08 00:31:33.909204",
+ "modified": "2023-06-08 00:54:50.834147",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
