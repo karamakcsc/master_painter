@@ -13,7 +13,7 @@ def get_painter_no(mobile_number=None, first_name=None):
         FROM `tabPainter` tp
         WHERE tp.mobile_number = %s
         ORDER BY tp.creation DESC;
-        """, (mobile_number,), as_dict=True)
+        """, (mobile_number, first_name), as_dict=True)
 
 
 #######################
