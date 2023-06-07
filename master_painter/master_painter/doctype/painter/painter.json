@@ -24,6 +24,8 @@
   "store",
   "column_break_15",
   "master_card_no",
+  "section_break_18",
+  "registration_store",
   "amended_from"
  ],
  "fields": [
@@ -108,8 +110,7 @@
    "fieldname": "store",
    "fieldtype": "Select",
    "label": "Store",
-   "options": "\nStatieh",
-   "reqd": 1
+   "options": "\nStatieh"
   },
   {
    "fieldname": "column_break_15",
@@ -131,16 +132,26 @@
    "read_only": 1
   },
   {
+   "default": "Today",
    "fieldname": "register_date",
    "fieldtype": "Date",
    "label": "Register Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "registration_store",
+   "fieldtype": "Data",
+   "label": "Registration Store"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-07 23:48:06.972208",
+ "modified": "2023-06-08 00:02:45.036751",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
