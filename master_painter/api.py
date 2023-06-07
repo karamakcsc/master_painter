@@ -28,7 +28,7 @@ def get_painter_not_active(mobile_number=None):
     result = frappe.db.sql("""
         SELECT tp.mobile_number, tp.first_name, tp.painter_level
         FROM `tabPainter` tp
-        WHERE tp.mobile_number = %s AND tp.docstatus = 1 AND tp.painter_level = 'Not Active'
+        WHERE tp.mobile_number = %s AND tp.docstatus = 1
         ORDER BY tp.creation DESC;
         """, (mobile_number,), as_dict=True)
     
