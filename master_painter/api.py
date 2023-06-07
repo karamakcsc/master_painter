@@ -21,6 +21,8 @@ def get_painter_no(mobile_number=None):
     return result
 
 
+from frappe import _
+
 @frappe.whitelist()
 def get_painter_not_active(mobile_number=None, painter_level=None):
     result = frappe.db.sql("""
@@ -28,12 +30,13 @@ def get_painter_not_active(mobile_number=None, painter_level=None):
         FROM `tabPainter` tp
         WHERE tp.mobile_number = %s AND tp.docstatus = 1 AND tp.painter_level = 'Not Active'
         ORDER BY tp.creation DESC;
-        """, (painter_level,), as_dict=True)
+        """, (mobile_number,), as_dict=True)
     
     # Reset all memory or variables here
     frappe.clear_cache()
     
     return result
+
 
 #######################
 # from flask import Flask, request, jsonify
