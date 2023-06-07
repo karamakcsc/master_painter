@@ -24,7 +24,7 @@ def get_painter_no(mobile_number=None):
 from frappe import _
 
 @frappe.whitelist()
-def get_painter_not_active(mobile_number=None, painter_level=None):
+def get_painter_not_active(mobile_number=None):
     result = frappe.db.sql("""
         SELECT tp.mobile_number, tp.first_name, tp.painter_level
         FROM `tabPainter` tp
