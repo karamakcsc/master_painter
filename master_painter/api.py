@@ -11,7 +11,7 @@ def get_painter_no(mobile_number=None):
     return frappe.db.sql("""
         SELECT tp.mobile_number, tp.first_name, tp.painter_level
         FROM `tabPainter` tp
-        WHERE tp.mobile_number = %s
+        WHERE tp.mobile_number = %s AND docstatus = 1
         ORDER BY tp.creation DESC;
         """, (mobile_number,), as_dict=True)
 
