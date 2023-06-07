@@ -135,7 +135,8 @@
    "default": "Today",
    "fieldname": "register_date",
    "fieldtype": "Date",
-   "label": "Register Date"
+   "label": "Register Date",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_18",
@@ -150,7 +151,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-08 00:29:26.842119",
+ "modified": "2023-06-08 00:31:33.909204",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
