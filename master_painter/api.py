@@ -7,13 +7,13 @@ import requests , json
 
 
 @frappe.whitelist()
-def get_painter_no(mobile_number=None, first_name=None):
+def get_painter_no(mobile_number=None, first_name=None, painter_level=None):
     return frappe.db.sql("""
         SELECT tp.mobile_number
         FROM `tabPainter` tp
         WHERE tp.mobile_number = %s
         ORDER BY tp.creation DESC;
-        """, (mobile_number,), as_dict=True)
+        """, (mobile_number,first_name, painter_level), as_dict=True)
 
 
 #######################
