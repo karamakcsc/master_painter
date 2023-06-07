@@ -8,12 +8,17 @@ import requests , json
 
 @frappe.whitelist()
 def get_painter_no(mobile_number=None):
-    return frappe.db.sql("""
+    result = frappe.db.sql("""
         SELECT tp.mobile_number, tp.first_name, tp.painter_level
         FROM `tabPainter` tp
-        WHERE tp.mobile_number = %s AND docstatus = 1
+        WHERE tp.mobile_number = %s AND tp.docstatus = 1 AND tp.painter_level != 'Not Active'
         ORDER BY tp.creation DESC;
         """, (mobile_number,), as_dict=True)
+    
+    # Reset all memory or variables here
+    frappe.clear_cache()
+    
+    return result
 
 
 #######################
