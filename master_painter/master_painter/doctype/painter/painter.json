@@ -40,7 +40,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Mobile Number",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "column_break_4",
@@ -116,7 +117,8 @@
   {
    "fieldname": "master_card_no",
    "fieldtype": "Data",
-   "label": "Master Card No"
+   "label": "Master Card No",
+   "unique": 1
   },
   {
    "fieldname": "amended_from",
@@ -137,7 +139,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-07 21:56:31.192889",
+ "modified": "2023-06-07 23:40:50.272297",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
