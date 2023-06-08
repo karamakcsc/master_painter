@@ -7,7 +7,6 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "naming_series",
   "mobile_number",
   "register_date",
   "column_break_4",
@@ -29,14 +28,6 @@
   "amended_from"
  ],
  "fields": [
-  {
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "PainterID",
-   "options": "MP-ID-.YYYY.-",
-   "reqd": 1
-  },
   {
    "fieldname": "mobile_number",
    "fieldtype": "Data",
@@ -150,7 +141,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-08 22:27:57.453406",
+ "modified": "2023-06-08 22:40:51.332108",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
