@@ -37,6 +37,28 @@ def get_painter_no(mobile_number=None):
 
 
 
+@frappe.whitelist()
+def get_painter_no_active(mobile_number=None, docstatus=None):
+    if mobile_number is None and docstatus is None:
+        return None
+
+    result = frappe.db.sql("""
+        SELECT tp.mobile_number, tp.first_name, tp.painter_level, tp.docstatus
+        FROM `tabPainter` tp
+        WHERE tp.mobile_number = %s OR tp.docstatus = %s
+        ORDER BY tp.creation DESC;
+        """, (mobile_number, docstatus), as_dict=True)
+
+    # Reset all memory or variables here
+    frappe.clear_cache()
+
+    if not result:
+        return None
+
+    return result
+
+
+
 # @frappe.whitelist()
 # def get_painter_no_active(mobile_number=None, docstatus=None):
 #     result = frappe.db.sql("""
@@ -49,25 +71,10 @@ def get_painter_no(mobile_number=None):
 #     # Reset all memory or variables here
 #     frappe.clear_cache()
     
+#     if not result:
+#         return None
+    
 #     return result
-
-
-@frappe.whitelist()
-def get_painter_no_active(mobile_number=None, docstatus=None):
-    result = frappe.db.sql("""
-        SELECT tp.mobile_number, tp.first_name, tp.painter_level, tp.docstatus
-        FROM `tabPainter` tp
-        WHERE tp.mobile_number = %s OR tp.docstatus = %s
-        ORDER BY tp.creation DESC;
-        """, (mobile_number, docstatus), as_dict=True)
-    
-    # Reset all memory or variables here
-    frappe.clear_cache()
-    
-    if not result:
-        return None
-    
-    return result
 
 
 
