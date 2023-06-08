@@ -4,7 +4,7 @@ from frappe.utils import flt, cstr, nowdate, comma_and
 from frappe import throw, msgprint, _
 from frappe.custom.doctype.custom_field.custom_field import create_custom_field
 import requests , json
-
+from frappe import _
 
 @frappe.whitelist()
 def get_painter_no(mobile_number=None):
@@ -19,9 +19,6 @@ def get_painter_no(mobile_number=None):
     frappe.clear_cache()
     
     return result
-
-
-from frappe import _
 
 # @frappe.whitelist()
 # def get_painter_no_active(mobile_number=None):
@@ -38,7 +35,22 @@ from frappe import _
 #     return result
 
 
-from frappe import _
+
+
+# @frappe.whitelist()
+# def get_painter_no_active(mobile_number=None, docstatus=None):
+#     result = frappe.db.sql("""
+#         SELECT tp.mobile_number, tp.first_name, tp.painter_level, tp.docstatus
+#         FROM `tabPainter` tp
+#         WHERE tp.mobile_number = %s OR tp.docstatus = %s
+#         ORDER BY tp.creation DESC;
+#         """, (mobile_number, docstatus), as_dict=True)
+    
+#     # Reset all memory or variables here
+#     frappe.clear_cache()
+    
+#     return result
+
 
 @frappe.whitelist()
 def get_painter_no_active(mobile_number=None, docstatus=None):
@@ -52,7 +64,16 @@ def get_painter_no_active(mobile_number=None, docstatus=None):
     # Reset all memory or variables here
     frappe.clear_cache()
     
+    if not result:
+        return None
+    
     return result
+
+
+
+
+
+
 
 
 #######################
