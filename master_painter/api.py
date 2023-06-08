@@ -38,7 +38,7 @@ def get_painter_no(mobile_number=None):
 
 
 @frappe.whitelist()
-def get_painter_no_active(mobile_number=None):
+def get_painter_no_active(mobile_number=None, docstatus=None):
     if mobile_number is None :
         return {
             'mobile_number': None
@@ -49,7 +49,7 @@ def get_painter_no_active(mobile_number=None):
         FROM `tabPainter` tp
         WHERE tp.mobile_number = %s OR tp.docstatus = %s
         ORDER BY tp.creation DESC;
-        """, (mobile_number,), as_dict=True)
+        """, (mobile_number, docstatus), as_dict=True)
 
     # Reset all memory or variables here
     frappe.clear_cache()
