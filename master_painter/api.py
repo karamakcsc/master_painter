@@ -40,7 +40,12 @@ def get_painter_no(mobile_number=None):
 @frappe.whitelist()
 def get_painter_no_active(mobile_number=None, docstatus=None):
     if mobile_number is None and docstatus is None:
-        return None
+        return {
+            'mobile_number': None,
+            'first_name': None,
+            'painter_level': None,
+            'docstatus': None
+        }
 
     result = frappe.db.sql("""
         SELECT tp.mobile_number, tp.first_name, tp.painter_level, tp.docstatus
@@ -53,9 +58,15 @@ def get_painter_no_active(mobile_number=None, docstatus=None):
     frappe.clear_cache()
 
     if not result:
-        return None
+        return {
+            'mobile_number': None,
+            'first_name': None,
+            'painter_level': None,
+            'docstatus': None
+        }
 
     return result
+
 
 
 
