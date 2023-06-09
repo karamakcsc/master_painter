@@ -107,10 +107,18 @@ def get_painter_no_active(mobile_number=None, docstatus=None):
 #######################
 
 
+import json
+import frappe
+
 @frappe.whitelist()
 def get_painter_no_active1(mobile_number=None, docstatus=None):
     if mobile_number is None:
-        return 'mobile_number: None'
+        return {
+            "data": {
+                "type": "text",
+                "text": "your message"
+            }
+        }
 
     result = frappe.db.sql("""
         SELECT tp.mobile_number
@@ -123,16 +131,30 @@ def get_painter_no_active1(mobile_number=None, docstatus=None):
     frappe.clear_cache()
 
     if not result:
-        return 'None'
+        return {
+            "data": {
+                "type": "text",
+                "text": "your message"
+            }
+        }
 
     # Convert the result to text
-    response_text = '\n'.join([f"{row['mobile_number']}" for row in result])
-    return response_text
+    response_text = '\n'.join([f"mobile_number: {row['mobile_number']}" for row in result])
 
-# # Example usage
+    return {
+        "data": {
+            "type": "text",
+            "text": response_text
+        }
+    }
+
+# Example usage
 # mobile_number = "1234567890"  # Provide a valid mobile number
 # docstatus = 1  # Provide a valid docstatus value
 
 # response = get_painter_no_active(mobile_number, docstatus)
-# print(response)
+# response_json = json.dumps(response)
+
+# print(response_json)
+
 
