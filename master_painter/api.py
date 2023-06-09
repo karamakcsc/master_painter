@@ -26,13 +26,13 @@ def get_painter_no(mobile_number=None, docstatus=None):
     # Reset all memory or variables here
     # frappe.clear_cache()
 
-    if not result:
-        return {
-            'mobile_number': "mobile_number",
-            'first_name': "first_name",
-            'painter_level': "painter_level",
-            'docstatus': "docstatus"
-        }
+    # if not result:
+    #     return {
+    #         'mobile_number': "mobile_number",
+    #         'first_name': "first_name",
+    #         'painter_level': "painter_level",
+    #         'docstatus': "docstatus"
+    #     }
 
     return result
 
