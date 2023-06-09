@@ -28,10 +28,10 @@ def get_painter_no(mobile_number=None, docstatus=None):
 
     if not result:
         return {
-            'mobile_number': ,
-            'first_name': ,
-            'painter_level': ,
-            'docstatus': 
+            'mobile_number': null,
+            'first_name': null,
+            'painter_level': null,
+            'docstatus': null
         }
 
     return result
