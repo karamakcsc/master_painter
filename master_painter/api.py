@@ -123,10 +123,10 @@ def get_painter_no_active1(mobile_number=None, docstatus=None):
     frappe.clear_cache()
 
     if not result:
-        return 'mobile_number: None'
+        return 'None'
 
     # Convert the result to text
-    response_text = '\n'.join([f"mobile_number: {row['mobile_number']}" for row in result])
+    response_text = '\n'.join([f"{row['mobile_number']}" for row in result])
     return response_text
 
 # # Example usage
