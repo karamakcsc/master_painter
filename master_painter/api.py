@@ -105,32 +105,34 @@ def get_painter_no_active(mobile_number=None, docstatus=None):
 
 
 #######################
-# from flask import Flask, request, jsonify
 
 
-# app = Flask(__name__)
+@frappe.whitelist()
+def get_painter_no_active1(mobile_number=None, docstatus=None):
+    if mobile_number is None:
+        return 'mobile_number: None'
 
-# # Endpoint for the Engati response
-# @app.route('/engati-response', methods=['POST'])
-# def engati_response():
-#     # Retrieve the phone number from the Engati response
-#     mobile_number = request.json.get('data').get('text')
+    result = frappe.db.sql("""
+        SELECT tp.mobile_number
+        FROM `tabPainter` tp
+        WHERE tp.mobile_number = %s OR tp.docstatus = %s
+        ORDER BY tp.creation DESC;
+        """, (mobile_number, docstatus), as_dict=True)
 
-#     # Call the Frappe function with the mobile number
-#     results = get_painter_no(mobile_number=mobile_number)
+    # Reset all memory or variables here
+    frappe.clear_cache()
 
-#     # Return the results as a JSON response
-#     return jsonify(results)
+    if not result:
+        return 'mobile_number: None'
 
-# # Frappe function to get the painter mobile number
-# @frappe.whitelist()
-# def get_painter_no(mobile_number=None, first_name=None):
-#     return frappe.db.sql("""
-#         SELECT tp.mobile_number, tp.first_name
-#         FROM `tabPainter` tp
-#         WHERE tp.mobile_number = %s
-#         ORDER BY tp.creation DESC;
-#         """, (mobile_number,), as_dict=True)
+    # Convert the result to text
+    response_text = '\n'.join([f"mobile_number: {row['mobile_number']}" for row in result])
+    return response_text
 
-# if __name__ == '__main__':
-#     app.run()
+# # Example usage
+# mobile_number = "1234567890"  # Provide a valid mobile number
+# docstatus = 1  # Provide a valid docstatus value
+
+# response = get_painter_no_active(mobile_number, docstatus)
+# print(response)
+
