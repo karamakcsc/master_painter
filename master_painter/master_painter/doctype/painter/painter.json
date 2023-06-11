@@ -25,6 +25,8 @@
   "master_card_no",
   "section_break_18",
   "registration_store",
+  "column_break_19",
+  "registration_city",
   "amended_from"
  ],
  "fields": [
@@ -90,8 +92,7 @@
    "fieldname": "city",
    "fieldtype": "Select",
    "label": "City",
-   "options": "\n\u0639\u0645\u0627\u0646\n\u0627\u0644\u0632\u0631\u0642\u0627\u0621\n\u0627\u0631\u0628\u062f\n\u0627\u0644\u0633\u0644\u0637\n\u062c\u0631\u0634\n\u0639\u062c\u0644\u0648\u0646\n\u0645\u0627\u062f\u0628\u0627\n\u0627\u0644\u0643\u0631\u0643\n\u0627\u0644\u0639\u0642\u0628\u0629",
-   "reqd": 1
+   "options": "\n\u0639\u0645\u0627\u0646\n\u0627\u0644\u0632\u0631\u0642\u0627\u0621\n\u0627\u0631\u0628\u062f\n\u0627\u0644\u0633\u0644\u0637\n\u062c\u0631\u0634\n\u0639\u062c\u0644\u0648\u0646\n\u0645\u0627\u062f\u0628\u0627\n\u0627\u0644\u0643\u0631\u0643\n\u0627\u0644\u0639\u0642\u0628\u0629"
   },
   {
    "fieldname": "column_break_13",
@@ -136,12 +137,21 @@
    "fieldname": "registration_store",
    "fieldtype": "Data",
    "label": "Registration Store"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "registration_city",
+   "fieldtype": "Data",
+   "label": "Registration City"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-11 13:09:41.600761",
+ "modified": "2023-06-11 13:32:42.817393",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
