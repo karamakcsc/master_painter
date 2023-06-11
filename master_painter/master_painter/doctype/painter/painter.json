@@ -24,6 +24,7 @@
   "column_break_15",
   "master_card_no",
   "section_break_18",
+  "registration_store",
   "amended_from"
  ],
  "fields": [
@@ -130,12 +131,17 @@
   {
    "fieldname": "section_break_18",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "registration_store",
+   "fieldtype": "Data",
+   "label": "Registration Store"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-08 22:43:48.746823",
+ "modified": "2023-06-11 13:09:41.600761",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
