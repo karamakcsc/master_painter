@@ -25,6 +25,7 @@
   "master_card_no",
   "section_break_18",
   "registration_store",
+  "image_url",
   "column_break_19",
   "registration_city",
   "section_break_21",
@@ -157,12 +158,17 @@
    "fieldtype": "Link",
    "label": "Store",
    "options": "MC Center"
+  },
+  {
+   "fieldname": "image_url",
+   "fieldtype": "Data",
+   "label": "Image URL"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-11 16:33:19.431489",
+ "modified": "2023-06-11 16:48:59.048637",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
