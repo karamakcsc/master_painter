@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:center_name",
  "creation": "2023-06-11 16:12:14.780803",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -14,12 +15,13 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Center Name",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-11 16:33:37.245527",
+ "modified": "2023-06-11 16:34:29.945068",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "MC Center",
