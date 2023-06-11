@@ -41,9 +41,18 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "MC Center",
+   "link_to": "MC Center",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-06-05 17:45:39.363168",
+ "modified": "2023-06-11 16:36:03.940733",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter",
@@ -61,6 +70,12 @@
    "doc_view": "List",
    "label": "Painter Invoice",
    "link_to": "Painter Invoice",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "MC Center",
+   "link_to": "MC Center",
    "type": "DocType"
   }
  ],
