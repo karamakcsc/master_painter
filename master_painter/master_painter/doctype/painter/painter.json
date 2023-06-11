@@ -101,12 +101,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "store",
-   "fieldtype": "Select",
-   "label": "Store",
-   "options": "\nStatieh"
-  },
-  {
    "fieldname": "column_break_15",
    "fieldtype": "Column Break"
   },
@@ -157,12 +151,18 @@
    "fieldname": "attached_image",
    "fieldtype": "Attach Image",
    "label": "Attached Image"
+  },
+  {
+   "fieldname": "store",
+   "fieldtype": "Link",
+   "label": "Store",
+   "options": "MC Center"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-11 13:53:20.411503",
+ "modified": "2023-06-11 16:13:53.542482",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
