@@ -29,7 +29,6 @@
   "column_break_19",
   "registration_city",
   "section_break_21",
-  "attached_image",
   "amended_from"
  ],
  "fields": [
@@ -149,11 +148,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "attached_image",
-   "fieldtype": "Attach Image",
-   "label": "Attached Image"
-  },
-  {
    "fieldname": "store",
    "fieldtype": "Link",
    "label": "Store",
@@ -168,7 +162,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-11 16:48:59.048637",
+ "modified": "2023-06-12 10:45:56.923471",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",

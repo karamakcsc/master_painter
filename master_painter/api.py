@@ -61,3 +61,28 @@ def get_painter_no_active(mobile_number=None, docstatus=None):
         }
 
     return result
+
+
+
+# @frappe.whitelist(allow_guest=True)
+# def send_sms(numbers, accpass):
+#     url = "https://josmsservice.com/SMS/API/GetBalance"
+
+#     # Parameters
+#     params = {
+#         "senderid": "advJotun",
+#         "numbers": numbers,
+#         "accname": "jotunPaints",
+#         "accpass": accpass,
+#         "msg": "Content of the message",
+#         # "id": "12345"  # Optional message ID
+#     }
+
+#     try:
+#         response = requests.get(url, params=params)
+#         if response.status_code == 200:
+#             return "SMS sent successfully!"
+#         else:
+#             return f"Failed to send SMS. Error: {response.text}"
+#     except requests.exceptions.RequestException as e:
+#         return f"Failed to send SMS: {str(e)}"
