@@ -32,6 +32,7 @@
   "image_file",
   "msg",
   "section_break_21",
+  "sms_count",
   "amended_from"
  ],
  "fields": [
@@ -178,12 +179,20 @@
    "fieldtype": "Long Text",
    "label": "Message Body",
    "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "sms_count",
+   "fieldtype": "Read Only",
+   "label": "SMS Count",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-14 00:41:32.754538",
+ "modified": "2023-06-14 02:05:50.613333",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
@@ -205,13 +214,25 @@
   },
   {
    "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "All",
+   "role": "Master Painter Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Master Painter Officer",
    "select": 1,
    "share": 1,
    "submit": 1,
