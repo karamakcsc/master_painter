@@ -29,6 +29,7 @@
   "image_link",
   "column_break_19",
   "registration_city",
+  "image_file",
   "section_break_21",
   "amended_from"
  ],
@@ -163,12 +164,17 @@
    "fieldname": "image_link",
    "fieldtype": "Long Text",
    "label": "Image Link"
+  },
+  {
+   "fieldname": "image_file",
+   "fieldtype": "Attach Image",
+   "label": "Image File"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-13 15:56:05.218229",
+ "modified": "2023-06-13 16:04:52.645428",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
