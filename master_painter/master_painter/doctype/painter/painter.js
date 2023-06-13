@@ -54,62 +54,6 @@ frappe.ui.form.on('Painter', {
   
 
 
-
-
-
-// frappe.ui.form.on("Painter", "refresh", function(frm) {
-// 	if(frm.doc.docstatus ==1){
-// 		frappe.msgprint("Please Send SMS To Activate The Painter")
-//     frm.add_custom_button(__("Send SMS"), function() {
-//         // When this button is clicked, do this
-// 		frappe.call({
-// 			method: "master_painter.api.send_sms",
-// 			args: {
-// 			  "numbers": frm.doc.name,
-// 			  "accpass": "pP$psJpsnyYClk2v",
-// 			  "msg": frm.doc.msg
-// 			},
-// 			callback: function(response) {
-// 			  // Handle the response from the server-side method
-// 			  var result = response.message;
-// 			  console.log(result);
-// 			  // Perform any additional actions based on the response
-// 			}
-// 		  });
-//  },);
-// }
-// });
-
-// frappe.ui.form.on("Painter", "refresh", function(frm) {
-//     if (frm.doc.docstatus == 1) {
-// 		if (frm.doc.sms_count <1 ){
-//         frappe.msgprint("Please Send SMS To Activate The Painter");}
-//         frm.add_custom_button(__("Send SMS"), function() {
-//             // When this button is clicked, do this
-//             frappe.call({
-//                 method: "master_painter.api.send_sms",
-//                 args: {
-//                     "numbers": frm.doc.name,
-//                     "accpass": "pP$psJpsnyYClk2v",
-//                     "msg": frm.doc.msg
-//                 },
-//                 callback: function(response) {
-//                     // Handle the response from the server-side method
-//                     var result = response.message;
-//                     console.log(result);
-//                     // Perform any additional actions based on the response
-                    
-                    
-//                 }
-//             });
-//         });
-//     }
-//     // Increment the SMS count
-//     frm.doc.sms_count = (frm.doc.sms_count) + 1;
-//     frm.refresh_field("sms_count");
-// });
-
-
 var smsCount = 0;
 
 frappe.ui.form.on("Painter", "refresh", function(frm) {
@@ -142,9 +86,6 @@ function incrementSMSCount(frm) {
     frm.set_value("sms_count", smsCount);
     frm.refresh_field("sms_count");
 }
-
-
-
 
 frappe.ui.form.on("Painter", "refresh", function(frm) {
 if (frm.doc.sms_count ==0) {frappe.msgprint("Please Send SMS To Activate The Painter");}
