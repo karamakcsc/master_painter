@@ -30,6 +30,7 @@
   "column_break_19",
   "registration_city",
   "image_file",
+  "msg",
   "section_break_21",
   "amended_from"
  ],
@@ -169,12 +170,20 @@
    "fieldname": "image_file",
    "fieldtype": "Attach Image",
    "label": "Image File"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "\u062a\u0645 \u062a\u0641\u0639\u064a\u0644 \u062d\u0633\u0627\u0628\u0643\u0645",
+   "fieldname": "msg",
+   "fieldtype": "Long Text",
+   "label": "Message Body",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-13 16:04:52.645428",
+ "modified": "2023-06-14 00:41:32.754538",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
