@@ -9,26 +9,79 @@ frappe.ui.form.on('Painter', {
 
 
 
-frappe.ui.form.on('Painter', {
-	on_submit: function(frm) {
-	//   var numbers = frm.doc.mobile_number;  // Use the mobile_number field value from the form
-	//   var accpass = "pP$psJpsnyYClk2v";  // Replace with your actual account password
-	frappe.msgprint("hi")
-	  frappe.call({
-		method: "master_painter.api.send_sms",
-		args: {
-			"numbers": frm.doc.name,
-			"accpass": "pP$psJpsnyYClk2v"
-		},
+// frappe.ui.form.on('Painter', {
+// 	on_submit: function(frm) {
+// 	//   var numbers = frm.doc.mobile_number;  // Use the mobile_number field value from the form
+// 	//   var accpass = "pP$psJpsnyYClk2v";  // Replace with your actual account password
+// 	frappe.msgprint("hi")
+// 	  frappe.call({
+// 		method: "master_painter.api.send_sms",
+// 		args: {
+// 			"numbers": frm.doc.name,
+// 			"accpass": "pP$psJpsnyYClk2v"
+// 		},
 		
-		callback: function(response) {
+// 		callback: function(response) {
 			
-		  // Handle the response from the server-side method
-		  var result = response.message;
-		  console.log(result);
-		  // Perform any additional actions based on the response
-		}
-	  });
-	}
-  });
+// 		  // Handle the response from the server-side method
+// 		  var result = response.message;
+// 		  console.log(result);
+// 		  // Perform any additional actions based on the response
+// 		}
+// 	  });
+// 	}
+//   });
+
+
+
+//   frappe.ui.form.on('Painter', {
+// 	on_submit: function(frm) {
+// 	//   var numbers = frm.doc.mobile_number;  // Use the mobile_number field value from the form
+// 	//   var accpass = "pP$psJpsnyYClk2v";  // Replace with your actual account password
+// 	frappe.msgprint("hi")
+// 	  frappe.call({
+// 		method: "master_painter.api.send_sms",
+// 		args: {
+// 			"numbers": frm.doc.name,
+// 			"accpass": "pP$psJpsnyYClk2v"
+// 		},
+		
+// 		callback: function(response) {
+			
+// 		  // Handle the response from the server-side method
+// 		  var result = response.message;
+// 		  console.log(result);
+// 		  // Perform any additional actions based on the response
+// 		}
+// 	  });
+// 	}
+//   });
   
+
+
+
+
+
+//   frappe.ui.form.on("Project", "on_submit", function(frm) {
+//     frm.add_custom_button(__("Close WIP Account"), function() {
+
+
+
+// 		frappe.call({
+// 			method: "master_painter.api.send_sms",
+// 			args: {
+// 				"numbers": frm.doc.name,
+// 				"accpass": "pP$psJpsnyYClk2v"
+// 			},
+			
+// 			callback: function(response) {
+				
+// 			  // Handle the response from the server-side method
+// 			  var result = response.message;
+// 			  console.log(result);
+// 			  // Perform any additional actions based on the response
+// 			}
+// 		  });
+
+//       }, );
+// });
