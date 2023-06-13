@@ -64,25 +64,25 @@ def get_painter_no_active(mobile_number=None, docstatus=None):
 
 
 
-@frappe.whitelist(allow_guest=True)
-def send_sms(numbers,accpass ):
-    url = "https://josmsservice.com/SMSServices/Clients/Prof/RestSingleSMS_General/SendSMS"
+# @frappe.whitelist(allow_guest=True)
+# def send_sms(numbers,accpass ):
+#     url = "https://josmsservice.com/SMSServices/Clients/Prof/RestSingleSMS_General/SendSMS"
 
-    # Parameters
-    params = {
-        "senderid": "JotunPaints",
-        "numbers": numbers,
-        "accname": "Jotun",
-        "accpass": accpass,
-        "msg": "Content of the message",
-        # "id": "12345"  # Optional message ID
-    }
+#     # Parameters
+#     params = {
+#         "senderid": "JotunPaints",
+#         "numbers": numbers,
+#         "accname": "Jotun",
+#         "accpass": accpass,
+#         "msg": "Content of the message",
+#         # "id": "12345"  # Optional message ID
+#     }
 
-    try:
-        response = requests.get(url, params=params)
-        if response.status_code == 200:
-            return "SMS sent successfully!"
-        else:
-            return f"Failed to send SMS. Error: {response.text}"
-    except requests.exceptions.RequestException as e:
-        return f"Failed to send SMS: {str(e)}"
+#     try:
+#         response = requests.get(url, params=params)
+#         if response.status_code == 200:
+#             return "SMS sent successfully!"
+#         else:
+#             return f"Failed to send SMS. Error: {response.text}"
+#     except requests.exceptions.RequestException as e:
+#         return f"Failed to send SMS: {str(e)}"
