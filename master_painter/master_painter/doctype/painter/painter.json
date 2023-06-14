@@ -30,6 +30,8 @@
   "registration_city",
   "msg",
   "section_break_21",
+  "image",
+  "section_break_25",
   "sms_count",
   "amended_from"
  ],
@@ -162,7 +164,7 @@
   },
   {
    "fieldname": "image_url",
-   "fieldtype": "Long Text",
+   "fieldtype": "Attach Image",
    "label": "Image URL"
   },
   {
@@ -180,12 +182,22 @@
    "fieldtype": "Read Only",
    "label": "SMS Count",
    "read_only": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Image",
+   "label": "Image",
+   "options": "image_url"
+  },
+  {
+   "fieldname": "section_break_25",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-14 11:19:30.857497",
+ "modified": "2023-06-14 12:32:34.032340",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
