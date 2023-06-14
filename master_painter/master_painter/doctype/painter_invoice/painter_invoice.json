@@ -17,6 +17,7 @@
   "mc_name",
   "section_break_8",
   "image_url",
+  "image_12",
   "amended_from"
  ],
  "fields": [
@@ -61,7 +62,7 @@
   },
   {
    "fieldname": "image_url",
-   "fieldtype": "Long Text",
+   "fieldtype": "Attach Image",
    "label": "Image URL"
   },
   {
@@ -86,12 +87,18 @@
    "fieldtype": "Date",
    "label": "Posting Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "image_12",
+   "fieldtype": "Image",
+   "label": "iamge",
+   "options": "preview_image"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-14 12:12:07.202058",
+ "modified": "2023-06-14 12:23:36.671142",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter Invoice",
