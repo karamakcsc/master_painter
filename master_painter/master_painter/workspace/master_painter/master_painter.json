@@ -50,9 +50,27 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Master Painter Item",
+   "link_to": "Master Painter Item",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Master Painter Item Category",
+   "link_to": "Master Painter Item Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-06-11 16:36:03.940733",
+ "modified": "2023-06-14 13:40:10.543806",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter",
@@ -76,6 +94,12 @@
    "doc_view": "List",
    "label": "MC Center",
    "link_to": "MC Center",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Master Painter Item",
+   "link_to": "Master Painter Item",
    "type": "DocType"
   }
  ],
