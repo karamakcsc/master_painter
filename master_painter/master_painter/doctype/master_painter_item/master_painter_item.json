@@ -10,10 +10,17 @@
  "field_order": [
   "item_number",
   "item_name",
+  "painter_level",
   "column_break_3",
   "item_volume",
   "item_price",
-  "item_category"
+  "point_amount",
+  "item_category",
+  "section_break_7",
+  "basic_level",
+  "advanced_level",
+  "column_break_10",
+  "master_level"
  ],
  "fields": [
   {
@@ -51,11 +58,52 @@
   {
    "fieldname": "column_break_3",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Point Pel Painter Level"
+  },
+  {
+   "fieldname": "basic_level",
+   "fieldtype": "Float",
+   "label": "Basic Level",
+   "precision": "3"
+  },
+  {
+   "fieldname": "advanced_level",
+   "fieldtype": "Float",
+   "label": "Advanced Level",
+   "precision": "3"
+  },
+  {
+   "fieldname": "master_level",
+   "fieldtype": "Float",
+   "label": "Master Level",
+   "precision": "3"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "painter_level.point_amount",
+   "fieldname": "point_amount",
+   "fieldtype": "Read Only",
+   "label": "Point Amount"
+  },
+  {
+   "fieldname": "painter_level",
+   "fieldtype": "Link",
+   "label": "Painter Level",
+   "options": "Painter Level"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-14 13:53:06.056670",
+ "modified": "2023-06-14 14:20:01.448398",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter Item",

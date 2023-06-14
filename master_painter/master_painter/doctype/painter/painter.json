@@ -52,12 +52,12 @@
    "allow_on_submit": 1,
    "default": "Basic",
    "fieldname": "painter_level",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Painter Level",
-   "options": "\nBasic\nAdvanced\nMaster\nContractor\nNot Active",
+   "options": "Painter Level",
    "reqd": 1
   },
   {
@@ -198,7 +198,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-14 12:37:57.761036",
+ "modified": "2023-06-14 14:03:45.884674",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",

@@ -63,14 +63,32 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Setting",
+   "link_to": "Master Painter Item Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Master Painter Item Category",
    "link_to": "Master Painter Item Category",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Painter Level",
+   "link_to": "Painter Level",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-06-14 13:47:34.716061",
+ "modified": "2023-06-14 14:06:57.709236",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter",
