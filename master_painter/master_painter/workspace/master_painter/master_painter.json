@@ -95,9 +95,18 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Master Painter QR Library",
+   "link_to": "Master Painter QR Library",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-06-14 16:01:04.494288",
+ "modified": "2023-06-14 16:32:42.038789",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter",
@@ -127,18 +136,6 @@
    "doc_view": "List",
    "label": "Master Painter Item",
    "link_to": "Master Painter Item",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "",
-   "label": "Master Painter Item Category",
-   "link_to": "Master Painter Item Category",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Painter Level",
-   "link_to": "Painter Level",
    "type": "DocType"
   }
  ],
