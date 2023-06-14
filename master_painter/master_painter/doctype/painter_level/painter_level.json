@@ -7,8 +7,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "painter_level",
-  "point_amount"
+  "painter_level"
  ],
  "fields": [
   {
@@ -18,17 +17,11 @@
    "in_standard_filter": 1,
    "label": "Painter Level",
    "unique": 1
-  },
-  {
-   "fieldname": "point_amount",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Point Amount"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-14 14:13:48.598569",
+ "modified": "2023-06-14 14:26:38.582764",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter Level",

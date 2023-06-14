@@ -10,12 +10,11 @@
  "field_order": [
   "item_number",
   "item_name",
-  "painter_level",
+  "item_category",
   "column_break_3",
   "item_volume",
   "item_price",
   "point_amount",
-  "item_category",
   "section_break_7",
   "basic_level",
   "advanced_level",
@@ -89,21 +88,14 @@
   },
   {
    "default": "0",
-   "fetch_from": "painter_level.point_amount",
    "fieldname": "point_amount",
    "fieldtype": "Read Only",
    "label": "Point Amount"
-  },
-  {
-   "fieldname": "painter_level",
-   "fieldtype": "Link",
-   "label": "Painter Level",
-   "options": "Painter Level"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-14 14:20:01.448398",
+ "modified": "2023-06-14 14:44:01.120711",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter Item",

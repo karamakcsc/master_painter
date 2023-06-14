@@ -1,25 +1,48 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:item_category",
+ "autoname": "format:{item_category}-{painter_level}",
  "creation": "2023-06-14 13:36:33.215217",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "item_category"
+  "item_category",
+  "column_break_2",
+  "painter_level",
+  "point_amount"
  ],
  "fields": [
   {
    "fieldname": "item_category",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Item Category",
    "unique": 1
+  },
+  {
+   "fieldname": "painter_level",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Painter Level",
+   "options": "Painter Level"
+  },
+  {
+   "fieldname": "point_amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Point Amount"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-14 13:36:45.518074",
+ "modified": "2023-06-14 14:36:53.673896",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter Item Category",
