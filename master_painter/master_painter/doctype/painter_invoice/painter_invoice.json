@@ -1,37 +1,97 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2023-06-05 17:41:46.354511",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "invoiceid",
+  "naming_series",
+  "invoice_number",
+  "painter_name",
+  "column_break_5",
+  "posting_date",
+  "invoice_date",
+  "painter_mobile",
+  "mc_name",
+  "section_break_8",
+  "image_url",
   "amended_from"
  ],
  "fields": [
   {
-   "fieldname": "invoiceid",
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Painter Invoice"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Painter Invoice"
+  },
+  {
+   "fieldname": "invoice_number",
    "fieldtype": "Data",
-   "label": "InvoiceID"
+   "label": "Invoice Number"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "options": "Painter Invoice"
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "label": "Invoice Date"
   },
   {
-   "fieldname": "amended_from",
+   "fieldname": "mc_name",
+   "fieldtype": "Data",
+   "label": "MC Name"
+  },
+  {
+   "fetch_from": "painter.first_name",
+   "fieldname": "painter_name",
+   "fieldtype": "Read Only",
+   "label": "Painter Name"
+  },
+  {
+   "fieldname": "painter_mobile",
    "fieldtype": "Link",
-   "label": "Amended From",
-   "options": "Painter Invoice"
+   "label": "Painter Mobile",
+   "options": "Painter"
+  },
+  {
+   "fieldname": "image_url",
+   "fieldtype": "Long Text",
+   "label": "Image URL"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "InvoiceID",
+   "options": "MP-SINV-.YYYY.-"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Uploaded Data"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-05 17:43:07.902621",
+ "modified": "2023-06-14 12:03:54.534749",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter Invoice",
