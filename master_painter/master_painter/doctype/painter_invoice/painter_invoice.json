@@ -92,13 +92,13 @@
    "fieldname": "image_12",
    "fieldtype": "Image",
    "label": "iamge",
-   "options": "preview_image"
+   "options": "image_url"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-14 12:23:36.671142",
+ "modified": "2023-06-14 12:26:43.590089",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter Invoice",
