@@ -70,7 +70,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-06-14 13:40:10.543806",
+ "modified": "2023-06-14 13:47:34.716061",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter",
@@ -100,6 +100,12 @@
    "doc_view": "List",
    "label": "Master Painter Item",
    "link_to": "Master Painter Item",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Master Painter Item Category",
+   "link_to": "Master Painter Item Category",
    "type": "DocType"
   }
  ],
