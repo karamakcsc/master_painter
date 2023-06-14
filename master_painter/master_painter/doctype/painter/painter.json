@@ -52,6 +52,7 @@
    "fieldname": "painter_level",
    "fieldtype": "Select",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Painter Level",
    "options": "\nBasic\nAdvanced\nMaster\nContractor\nNot Active",
    "reqd": 1
@@ -64,6 +65,8 @@
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "First Name",
    "reqd": 1
   },
@@ -180,7 +183,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-14 02:44:56.715324",
+ "modified": "2023-06-14 10:51:17.857461",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
