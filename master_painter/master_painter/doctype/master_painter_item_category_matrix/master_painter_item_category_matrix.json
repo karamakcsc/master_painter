@@ -2,63 +2,50 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "field:item_number",
- "creation": "2023-06-14 13:34:42.782222",
+ "autoname": "format:{item_category}-{painter_level}",
+ "creation": "2023-06-14 15:47:58.337603",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "item_number",
-  "item_name",
   "item_category",
-  "column_break_3",
-  "item_volume",
-  "item_price"
+  "column_break_2",
+  "painter_level",
+  "point_amount"
  ],
  "fields": [
   {
-   "fieldname": "item_number",
-   "fieldtype": "Data",
-   "in_standard_filter": 1,
-   "label": "Item Number",
-   "unique": 1
-  },
-  {
-   "fieldname": "item_name",
+   "fieldname": "item_category",
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Item Name"
+   "label": "Item Category"
   },
   {
-   "fieldname": "item_volume",
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "painter_level",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Painter Level",
+   "options": "Painter Level"
+  },
+  {
+   "fieldname": "point_amount",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Item Volume"
-  },
-  {
-   "fieldname": "item_price",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Item Price"
-  },
-  {
-   "fieldname": "item_category",
-   "fieldtype": "Link",
-   "label": "Item Category",
-   "options": "Master Painter Item Category"
-  },
-  {
-   "fieldname": "column_break_3",
-   "fieldtype": "Column Break"
+   "label": "Point Amount"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-14 16:01:32.461882",
+ "modified": "2023-06-14 15:56:17.213242",
  "modified_by": "Administrator",
  "module": "Master Painter",
- "name": "Master Painter Item",
+ "name": "Master Painter Item Category Matrix",
  "owner": "Administrator",
  "permissions": [
   {
@@ -87,7 +74,6 @@
    "write": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,

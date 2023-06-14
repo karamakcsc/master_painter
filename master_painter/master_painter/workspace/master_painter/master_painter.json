@@ -86,9 +86,18 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Master Painter Item Category Matrix",
+   "link_to": "Master Painter Item Category Matrix",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-06-14 14:27:37.802524",
+ "modified": "2023-06-14 16:01:04.494288",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter",
