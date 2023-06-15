@@ -86,3 +86,31 @@ def send_sms(numbers,accpass,msg):
             return f"Failed to send SMS. Error: {response.text}"
     except requests.exceptions.RequestException as e:
         return f"Failed to send SMS: {str(e)}"
+
+
+
+
+
+@frappe.whitelist()
+def get_qr(qr_code=None):
+    if qr_code is None:
+        return {
+            'qr_code': None
+        }
+
+    result = frappe.get_list(
+        "Master Painter QR Library",
+        filters={'qr_code': qr_code},
+        fields=['qr_code'],
+        order_by='creation DESC',
+        limit=1
+    )
+
+    frappe.clear_cache()
+
+    if not result:
+        return {
+            'qr_code': None
+        }
+
+    return result[0]
