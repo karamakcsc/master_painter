@@ -91,31 +91,31 @@ def send_sms(numbers,accpass,msg):
 
 
 
-@frappe.whitelist()
-def get_qr(qr_code=None):
-    if qr_code is None:
-        return {
-            'qr_code': None,
-            'item_number': None
-        }
+# @frappe.whitelist()
+# def get_qr(qr_code=None):
+#     if qr_code is None:
+#         return {
+#             'qr_code': None,
+#             'item_number': None
+#         }
 
-    result = frappe.get_list(
-        "Master Painter QR Library",
-        filters={'qr_code': qr_code},
-        fields=['qr_code', 'item_number'],
-        order_by='creation DESC',
-        limit=1
-    )
+#     result = frappe.get_list(
+#         "Master Painter QR Library",
+#         filters={'qr_code': qr_code},
+#         fields=['qr_code', 'item_number'],
+#         order_by='creation DESC',
+#         limit=1
+#     )
 
-    frappe.clear_cache()
+#     frappe.clear_cache()
 
-    if not result:
-        return {
-            'qr_code': None,
-            'item_number': None
-        }
+#     if not result:
+#         return {
+#             'qr_code': None,
+#             'item_number': None
+#         }
 
-    return result[0]
+#     return result[0]
 
 
 
@@ -129,4 +129,38 @@ def update_qr(qr_code=None):
     if doc:
         doc.is_sold = 1
         doc.save()
+
+
+
+
+@frappe.whitelist()
+def get_qr(qr_code=None):
+    if qr_code is None:
+        return {
+            'qr_code': None,
+            'item_number': None
+        }
+
+    doc = frappe.get_value("Master Painter QR Library", {"qr_code": qr_code}, ["item_number", "is_sold"], order_by="creation DESC")
+    if not doc:
+        return {
+            'qr_code': None,
+            'item_number': None,
+            'is_sold': 0
+        }
+
+    item_number, is_sold = doc
+
+    if is_sold == 1:
+        return {
+            'qr_code': None,
+            'item_number': None,
+            'is_sold': 1
+        }
+
+    return {
+        'qr_code': qr_code,
+        'item_number': item_number,
+        'is_sold': 0
+    }
 
