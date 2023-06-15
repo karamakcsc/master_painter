@@ -9,14 +9,6 @@ frappe.ui.form.on('Master Painter Item', {
 
 
 
-// cur_frm.fields_dict['point_amount'].get_query = function(doc) {
-// 	return {
-// 		filters: {
-// 			"name": doc.item_category
-// 		}
-// 	}
-// }
-
 
 // frappe.ui.form.on('Master Painter Item', {
 // 	item_category: function(frm) {
