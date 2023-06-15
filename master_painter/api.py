@@ -95,13 +95,14 @@ def send_sms(numbers,accpass,msg):
 def get_qr(qr_code=None):
     if qr_code is None:
         return {
-            'qr_code': None
+            'qr_code': None,
+            'item_number': None
         }
 
     result = frappe.get_list(
         "Master Painter QR Library",
         filters={'qr_code': qr_code},
-        fields=['qr_code'],
+        fields=['qr_code', 'item_number'],
         order_by='creation DESC',
         limit=1
     )
@@ -110,7 +111,9 @@ def get_qr(qr_code=None):
 
     if not result:
         return {
-            'qr_code': None
+            'qr_code': None,
+            'item_number': None
         }
 
     return result[0]
+
