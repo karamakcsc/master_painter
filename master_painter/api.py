@@ -117,3 +117,16 @@ def get_qr(qr_code=None):
 
     return result[0]
 
+
+
+
+@frappe.whitelist()
+def update_qr(qr_code=None):
+    if qr_code is None:
+        return
+
+    doc = frappe.get_doc("Master Painter QR Library", {"qr_code": qr_code})
+    if doc:
+        doc.is_sold = 1
+        doc.save()
+
