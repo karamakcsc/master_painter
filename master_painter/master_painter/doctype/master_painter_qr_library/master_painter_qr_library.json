@@ -9,21 +9,25 @@
  "engine": "InnoDB",
  "field_order": [
   "qr_code",
-  "item_number",
-  "column_break_3",
   "item_name",
+  "column_break_3",
+  "item_number",
   "is_sold"
  ],
  "fields": [
   {
    "fieldname": "item_number",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Item Number",
    "options": "Master Painter Item"
   },
   {
    "fieldname": "item_name",
    "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Item Name"
   },
   {
@@ -39,12 +43,14 @@
   {
    "fieldname": "qr_code",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "QR Code"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-14 16:31:48.909740",
+ "modified": "2023-06-15 10:55:08.820904",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter QR Library",
