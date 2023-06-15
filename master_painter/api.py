@@ -153,7 +153,7 @@ def get_qr(qr_code=None):
 
     if is_sold == 1:
         return {
-            'qr_code': None,
+            'qr_code': qr_code,
             'item_number': None,
             'is_sold': 1
         }
