@@ -43,34 +43,24 @@ frappe.ui.form.on('Painter Invoice', {
 
 frappe.ui.form.on('Painter Invoice', {
     onload: function(frm) {
-		// frappe.msgprint("hi")
-        frappe.call({
-            method: "master_painter.master_painter.doctype.painter_invoice.painter_invoice.get_painter_store",
-            args: {
-                painter_mobile: frm.doc.painter_mobile
-            },
-            callback: function(r) {
-				frm.set_value('mc_name', r.message);
-            }
-        });
+        if (frm.doc.docstatus === 0) {
+            frappe.call({
+                method: "master_painter.master_painter.doctype.painter_invoice.painter_invoice.get_painter_level",
+                args: {
+                    painter_mobile: frm.doc.painter_mobile
+                },
+                callback: function(r) {
+                    if (r && r.message) {
+                        frm.set_value('painter_level', r.message);
+                    } else {
+                        frappe.msgprint("Unable to retrieve painter level.");
+                    }
+                }
+            });
+        }
     }
 });
 
-
-frappe.ui.form.on('Painter Invoice', {
-    onload: function(frm) {
-		// frappe.msgprint("hi")
-        frappe.call({
-            method: "master_painter.master_painter.doctype.painter_invoice.painter_invoice.get_painter_level",
-            args: {
-                painter_mobile: frm.doc.painter_mobile
-            },
-            callback: function(r) {
-				frm.set_value('painter_level', r.message);
-            }
-        });
-    }
-});
 
 
 frappe.ui.form.on("Painter Sales Item", "selling_rate", function(frm, cdt, cdn) {
@@ -107,20 +97,27 @@ function update_total_points(frm) {
 
 frappe.ui.form.on('Painter Sales Item', {
     items_remove: function(frm, cdt, cdn) {
-        update_price_difference(frm);
+        update_total_diff_rate(frm);
+        refresh_fields(frm);
     },
     selling_rate: function(frm, cdt, cdn) {
-        update_price_difference(frm);
+        update_total_diff_rate(frm);
+        refresh_fields(frm);
     }
 });
-function update_price_difference(frm) {
+
+function update_total_diff_rate(frm) {
     var total = 0;
     frm.doc.items.forEach(function(d) {
         total += flt(d.price_diff);
     });
     frm.set_value('total_diff', total);
-    refresh_field("total_diff");
 }
+
+function refresh_fields(frm) {
+    frm.refresh_field('total_diff');
+}
+
 
 
 
