@@ -158,7 +158,7 @@ frappe.ui.form.on('Painter Sales Item', {
         update_total_selling_rate(frm);
     },
     selling_rate: function(frm, cdt, cdn) {
-        update_total_selling_ratee(frm);
+        update_total_selling_rate(frm);
     }
 });
 function update_total_selling_rate(frm) {
