@@ -99,7 +99,8 @@
    "collapsible": 1,
    "fieldname": "section_break_8",
    "fieldtype": "Section Break",
-   "label": "Uploaded Data"
+   "label": "Uploaded Data",
+   "read_only": 1
   },
   {
    "default": "Today",
@@ -144,7 +145,8 @@
    "fieldname": "total_points",
    "fieldtype": "Float",
    "label": "Total Points",
-   "precision": "3"
+   "precision": "3",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_14",
@@ -154,25 +156,28 @@
    "fieldname": "total_diff",
    "fieldtype": "Float",
    "label": "Total Difference",
-   "precision": "3"
+   "precision": "3",
+   "read_only": 1
   },
   {
    "fieldname": "total_sys_rate",
    "fieldtype": "Float",
    "label": "Total System Price",
-   "precision": "3"
+   "precision": "3",
+   "read_only": 1
   },
   {
    "fieldname": "total_selling_rate",
    "fieldtype": "Float",
    "label": "Total Selling Rate",
-   "precision": "3"
+   "precision": "3",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-17 17:08:10.069379",
+ "modified": "2023-06-17 17:16:27.215292",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter Invoice",
