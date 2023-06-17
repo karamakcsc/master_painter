@@ -10,6 +10,7 @@
   "item_number",
   "item_name",
   "item_category",
+  "column_break_5",
   "point_amount",
   "sys_rate",
   "selling_rate",
@@ -67,12 +68,16 @@
    "fieldtype": "Float",
    "label": "Price Difference",
    "precision": "3"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-06-17 16:44:46.750924",
+ "modified": "2023-06-17 17:01:46.866866",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter Sales Item",
