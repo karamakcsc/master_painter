@@ -78,14 +78,14 @@ def get_painter_level(painter_mobile=None):
 #     doc.save()
 
 
-# def set_item_details(doc, method):
-#     for row in doc.items:
-#         item_qr = frappe.get_doc("Master Painter QR Library", {"qr_code": row.qr_code})
-#         if item_qr:
-#             row.item_name = item_qr.item_name
-#             row.item_number = item_qr.item_number
+def set_item_details(doc, method):
+    for row in doc.items:
+        item_qr = frappe.get_doc("Master Painter QR Library", {"qr_code": row.qr_code})
+        if item_qr:
+            row.item_name = item_qr.item_name
+            row.item_number = item_qr.item_number
 
-#             item_category = frappe.get_doc("Master Painter Item", {"item_number": item_qr.item_number})
-#             if item_category:
-#                 row.item_category = item_category.item_category
-#     doc.save()
+            item_category = frappe.get_doc("Master Painter Item", {"item_number": item_qr.item_number})
+            if item_category:
+                row.item_category = item_category.item_category
+    doc.save()
