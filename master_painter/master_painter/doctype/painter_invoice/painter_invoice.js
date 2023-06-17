@@ -25,20 +25,20 @@ frappe.ui.form.on('Painter Invoice', {
 
 
 
-frappe.ui.form.on('Painter Invoice', {
-    onload: function(frm) {
-		// frappe.msgprint("hi")
-        frappe.call({
-            method: "master_painter.master_painter.doctype.painter_invoice.painter_invoice.get_painter_store",
-            args: {
-                painter_mobile: frm.doc.painter_mobile
-            },
-            callback: function(r) {
-				frm.set_value('mc_name', r.message);
-            }
-        });
-    }
-});
+// frappe.ui.form.on('Painter Invoice', {
+//     onload: function(frm) {
+// 		// frappe.msgprint("hi")
+//         frappe.call({
+//             method: "master_painter.master_painter.doctype.painter_invoice.painter_invoice.get_painter_store",
+//             args: {
+//                 painter_mobile: frm.doc.painter_mobile
+//             },
+//             callback: function(r) {
+// 				frm.set_value('mc_name', r.message);
+//             }
+//         });
+//     }
+// });
 
 
 frappe.ui.form.on('Painter Invoice', {
