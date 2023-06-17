@@ -55,11 +55,12 @@
   },
   {
    "fieldname": "mc_name",
-   "fieldtype": "Read Only",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "MC Name"
+   "label": "MC Name",
+   "options": "MC Center"
   },
   {
    "fetch_from": "painter.first_name",
@@ -177,7 +178,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-17 17:16:27.215292",
+ "modified": "2023-06-17 21:42:10.007276",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter Invoice",
