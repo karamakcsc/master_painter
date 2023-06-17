@@ -132,12 +132,11 @@ def get_qr(qr_code=None):
         'is_sold': 0
     }
 
-# @frappe.whitelist()
-# def update_inv(qr_code=None):
-#     if qr_code is None:
-#         return
 
-#     doc = frappe.get_doc("Painter Invoice", {"items": qr_code})
-#     if doc:
-#         doc.is_sold = 1
-#         doc.save()
+
+
+
+
+
+
+

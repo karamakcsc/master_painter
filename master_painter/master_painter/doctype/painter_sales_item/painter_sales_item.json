@@ -21,7 +21,8 @@
    "fieldname": "qr_code",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "QR Code"
+   "label": "QR Code",
+   "read_only": 1
   },
   {
    "fieldname": "item_number",
@@ -61,13 +62,15 @@
    "fieldname": "selling_rate",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Selling Price"
+   "label": "Selling Price",
+   "read_only": 1
   },
   {
    "fieldname": "price_diff",
    "fieldtype": "Float",
    "label": "Price Difference",
-   "precision": "3"
+   "precision": "3",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_5",
@@ -77,7 +80,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-06-17 17:01:46.866866",
+ "modified": "2023-06-17 21:34:41.246273",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter Sales Item",
