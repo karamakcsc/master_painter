@@ -77,7 +77,6 @@ frappe.ui.form.on("Painter Sales Item", "selling_rate", function(frm, cdt, cdn) 
     var d = locals[cdt][cdn];
         frappe.db.get_value("Master Painter Item Category Matrix", {"painter_level": frm.doc.painter_level, "item_category": d.item_category}, "point_amount", function(value) {
             d.point_amount = value.point_amount;
-            cur_frm.refresh_field();
         });
 });
 
@@ -86,7 +85,6 @@ frappe.ui.form.on("Painter Sales Item", "selling_rate", function(frm, cdt, cdn) 
     var d = locals[cdt][cdn];
         frappe.db.get_value("Master Painter Item", {"item_number": d.item_number}, "item_price", function(value) {
             d.sys_rate = value.item_price;
-            cur_frm.refresh_field();
         });
 });
 
@@ -152,4 +150,22 @@ function update_total_sys_rate(frm) {
     });
     frm.set_value('total_sys_rate', total);
     refresh_field("total_sys_rate");
+}
+
+
+frappe.ui.form.on('Painter Sales Item', {
+    items_remove: function(frm, cdt, cdn) {
+        update_total_selling_rate(frm);
+    },
+    selling_rate: function(frm, cdt, cdn) {
+        update_total_selling_ratee(frm);
+    }
+});
+function update_total_selling_rate(frm) {
+    var total = 0;
+    frm.doc.items.forEach(function(d) {
+        total += flt(d.selling_rate);
+    });
+    frm.set_value('total_selling_rate', total);
+    refresh_field("total_selling_rate");
 }

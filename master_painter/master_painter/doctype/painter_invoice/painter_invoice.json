@@ -22,6 +22,7 @@
   "total_sys_rate",
   "total_diff",
   "column_break_14",
+  "total_selling_rate",
   "total_points",
   "section_break_8",
   "image_url",
@@ -160,12 +161,18 @@
    "fieldtype": "Float",
    "label": "Total System Price",
    "precision": "3"
+  },
+  {
+   "fieldname": "total_selling_rate",
+   "fieldtype": "Float",
+   "label": "Total Selling Rate",
+   "precision": "3"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-17 16:51:54.205195",
+ "modified": "2023-06-17 17:08:10.069379",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter Invoice",
