@@ -15,6 +15,14 @@
   "posting_date",
   "invoice_date",
   "mc_name",
+  "painter_level",
+  "section_break_10",
+  "items",
+  "section_break_12",
+  "total_sys_rate",
+  "total_diff",
+  "column_break_14",
+  "total_points",
   "section_break_8",
   "image_url",
   "section_break_11",
@@ -46,7 +54,7 @@
   },
   {
    "fieldname": "mc_name",
-   "fieldtype": "Data",
+   "fieldtype": "Read Only",
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
@@ -68,7 +76,8 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Painter Mobile",
-   "options": "Painter"
+   "options": "Painter",
+   "read_only": 1
   },
   {
    "fieldname": "image_url",
@@ -108,12 +117,55 @@
    "fieldname": "section_break_11",
    "fieldtype": "Section Break",
    "label": "Image Preview"
+  },
+  {
+   "fieldname": "painter_level",
+   "fieldtype": "Read Only",
+   "label": "Painter Level"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Painter Sales Item"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "total_points",
+   "fieldtype": "Float",
+   "label": "Total Points",
+   "precision": "3"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_diff",
+   "fieldtype": "Float",
+   "label": "Total Difference",
+   "precision": "3"
+  },
+  {
+   "fieldname": "total_sys_rate",
+   "fieldtype": "Float",
+   "label": "Total System Price",
+   "precision": "3"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-14 12:56:20.651361",
+ "modified": "2023-06-17 16:51:54.205195",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter Invoice",

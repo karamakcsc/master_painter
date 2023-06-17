@@ -19,7 +19,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Item Category"
+   "label": "Item Category",
+   "options": "Master Painter Item Category"
   },
   {
    "fieldname": "column_break_2",
@@ -42,7 +43,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-14 15:56:17.213242",
+ "modified": "2023-06-17 02:16:34.836824",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter Item Category Matrix",

@@ -88,38 +88,6 @@ def send_sms(numbers,accpass,msg):
         return f"Failed to send SMS: {str(e)}"
 
 
-
-
-
-# @frappe.whitelist()
-# def get_qr(qr_code=None):
-#     if qr_code is None:
-#         return {
-#             'qr_code': None,
-#             'item_number': None
-#         }
-
-#     result = frappe.get_list(
-#         "Master Painter QR Library",
-#         filters={'qr_code': qr_code},
-#         fields=['qr_code', 'item_number'],
-#         order_by='creation DESC',
-#         limit=1
-#     )
-
-#     frappe.clear_cache()
-
-#     if not result:
-#         return {
-#             'qr_code': None,
-#             'item_number': None
-#         }
-
-#     return result[0]
-
-
-
-
 @frappe.whitelist()
 def update_qr(qr_code=None):
     if qr_code is None:
@@ -164,3 +132,12 @@ def get_qr(qr_code=None):
         'is_sold': 0
     }
 
+# @frappe.whitelist()
+# def update_inv(qr_code=None):
+#     if qr_code is None:
+#         return
+
+#     doc = frappe.get_doc("Painter Invoice", {"items": qr_code})
+#     if doc:
+#         doc.is_sold = 1
+#         doc.save()

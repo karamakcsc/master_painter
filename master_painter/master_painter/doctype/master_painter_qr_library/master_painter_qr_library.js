@@ -11,7 +11,7 @@ frappe.ui.form.on('Master Painter QR Library', {
 
 frappe.ui.form.on('Master Painter QR Library', {
     item_number: function(frm) {
-		frappe.msgprint("hi")
+		// frappe.msgprint("hi")
         frappe.call({
             method: "master_painter.master_painter.doctype.master_painter_qr_library.master_painter_qr_library.get_item_name",
             args: {

@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-06-17 02:13:02.545486",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "qr_code",
+  "item_number",
+  "item_name",
+  "item_category",
+  "point_amount",
+  "sys_rate",
+  "selling_rate",
+  "price_diff"
+ ],
+ "fields": [
+  {
+   "fieldname": "qr_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "QR Code"
+  },
+  {
+   "fieldname": "item_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_category",
+   "fieldtype": "Data",
+   "label": "Item Category",
+   "read_only": 1
+  },
+  {
+   "fieldname": "point_amount",
+   "fieldtype": "Float",
+   "label": "Point Amount",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sys_rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "System Price",
+   "read_only": 1
+  },
+  {
+   "fieldname": "selling_rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Selling Price"
+  },
+  {
+   "fieldname": "price_diff",
+   "fieldtype": "Float",
+   "label": "Price Difference",
+   "precision": "3"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-06-17 16:44:46.750924",
+ "modified_by": "Administrator",
+ "module": "Master Painter",
+ "name": "Painter Sales Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
