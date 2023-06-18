@@ -14,7 +14,8 @@
   {
    "fieldname": "point_rate",
    "fieldtype": "Float",
-   "label": "Point Rate"
+   "label": "Point Rate",
+   "precision": "5"
   },
   {
    "fieldname": "mini_point",
@@ -29,7 +30,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-06-18 11:58:23.035967",
+ "modified": "2023-06-18 12:00:23.985726",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Redeem Setting",
