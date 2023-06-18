@@ -45,24 +45,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "MC Center",
-   "link_to": "MC Center",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Master Painter Item",
-   "link_to": "Master Painter Item",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Setting",
    "link_to": "Master Painter Item Category",
    "link_type": "DocType",
@@ -104,9 +86,27 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "MC Center",
+   "link_to": "MC Center",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Master Painter Item",
+   "link_to": "Master Painter Item",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-06-14 16:32:42.038789",
+ "modified": "2023-06-18 11:36:44.196966",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter",
@@ -124,18 +124,6 @@
    "doc_view": "List",
    "label": "Painter Invoice",
    "link_to": "Painter Invoice",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "MC Center",
-   "link_to": "MC Center",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Master Painter Item",
-   "link_to": "Master Painter Item",
    "type": "DocType"
   }
  ],
