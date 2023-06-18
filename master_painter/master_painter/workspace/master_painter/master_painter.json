@@ -49,15 +49,6 @@
    "link_to": "Redeem",
    "link_type": "DocType",
    "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Redeem",
-   "link_to": "Redeem",
-   "link_type": "DocType",
-   "onboard": 0,
    "type": "Link"
   },
   {
@@ -142,7 +133,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-06-18 13:07:00.799347",
+ "modified": "2023-06-18 13:14:27.089247",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Master Painter",
