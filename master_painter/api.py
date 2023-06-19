@@ -140,3 +140,84 @@ def get_qr(qr_code=None):
 
 
 
+
+
+# @frappe.whitelist()
+# def update_inv(qr_code=None, erp_inv_name=None, num_items_to_add=5):
+#     url = "http://ugc.kcsc.com.jo/api/resource/Painter Invoice/{erp_inv_name}"
+#     headers = {
+#         "Authorization": "Basic NzJkNGZhMjUzNmZhMWIxOjgwYjY1NWYzNmY2MWFjYw==",
+#         "Content-Type": "application/json",
+#         "Cookie": "sid=Guest"
+#     }
+
+#     data = {
+#         "items": []
+#     }
+
+#     for i in range(num_items_to_add):
+#         new_item = {
+#             "qr_code": qr_code
+#         }
+#         data["items"].append(new_item)
+
+#     response = requests.put(url, headers=headers, data=json.dumps(data))
+
+#     print(response.text)
+
+# # Assuming you have the value for erp_inv_name
+# erp_inv_name = "{erp_inv_name}"
+
+# update_inv(qr_code="{qr_code}", erp_inv_name=erp_inv_name, num_items_to_add=5)
+
+# @frappe.whitelist()
+# def update_inv(qr_code=None, erp_inv_name=None, num_items_to_add=5):
+#     url = f"http://ugc.kcsc.com.jo/api/resource/Painter Invoice/{erp_inv_name}"
+#     headers = {
+#         "Authorization": "Basic NzJkNGZhMjUzNmZhMWIxOjgwYjY1NWYzNmY2MWFjYw==",
+#         "Content-Type": "application/json",
+#         "Cookie": "sid=Guest"
+#     }
+
+#     data = {
+#         "items": [qr_code]
+#     }
+
+#     response = requests.put(url, headers=headers, data=json.dumps(data))
+
+#     print(response.text)
+
+# # Assuming you have the value for erp_inv_name
+# erp_inv_name = "<provide_erp_inv_name>"
+# qr_code = "E355P5O18E0X0"
+
+# update_inv(qr_code=qr_code, erp_inv_name=erp_inv_name, num_items_to_add=5)
+
+# @frappe.whitelist()
+# def update_inv(qr_code=None, erp_inv_name=None, num_items_to_add=1):
+#     url = f"http://ugc.kcsc.com.jo/api/resource/Painter Invoice/{erp_inv_name}"
+#     headers = {
+#         "Authorization": "Basic NzJkNGZhMjUzNmZhMWIxOjgwYjY1NWYzNmY2MWFjYw==",
+#         "Content-Type": "application/json",
+#         "Cookie": "sid=Guest"
+#     }
+
+#     data = {
+#         "items": []
+#     }
+
+#     for i in range(num_items_to_add):
+#         new_item = {
+#             "qr_code": qr_code
+#         }
+#         data["items"].append(new_item)
+
+#     response = requests.put(url, headers=headers, data=json.dumps(data))
+
+#     print(response.text)
+
+# # Assuming you have the value for erp_inv_name and qr_code
+# erp_inv_name = "{erp_inv_name}"
+# qr_code = "{qr_code}"
+
+# update_inv(qr_code=qr_code, erp_inv_name=erp_inv_name, num_items_to_add=1)

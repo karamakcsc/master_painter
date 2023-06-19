@@ -26,6 +26,12 @@
   "personal_number",
   "column_break_15",
   "master_card_no",
+  "section_break_20",
+  "housing",
+  "home",
+  "isolate",
+  "column_break_22",
+  "ref_persone",
   "section_break_18",
   "registration_store",
   "image_url",
@@ -210,19 +216,52 @@
    "fieldname": "nationality_number",
    "fieldtype": "Data",
    "label": "Nationality Number",
-   "mandatory_depends_on": "eval:doc.nationality=='\u0623\u0631\u062f\u0646\u064a\u0629'"
+   "mandatory_depends_on": "eval:doc.nationality=='\u0623\u0631\u062f\u0646\u064a\u0629'",
+   "unique": 1
   },
   {
    "depends_on": "eval:doc.nationality!='\u0623\u0631\u062f\u0646\u064a\u0629'",
    "fieldname": "personal_number",
    "fieldtype": "Data",
    "label": "Personal Number"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break",
+   "label": "Registration Questions"
+  },
+  {
+   "default": "0",
+   "fieldname": "housing",
+   "fieldtype": "Check",
+   "label": "\u0625\u0633\u0643\u0627\u0646\u0627\u062a"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "home",
+   "fieldtype": "Check",
+   "label": "\u0645\u0646\u0627\u0632\u0644"
+  },
+  {
+   "default": "0",
+   "fieldname": "isolate",
+   "fieldtype": "Check",
+   "label": "\u0639\u0632\u0644"
+  },
+  {
+   "fieldname": "ref_persone",
+   "fieldtype": "Long Text",
+   "label": "\u0627\u0644\u0627\u0634\u062e\u0627\u0635 \u0627\u0644\u0630\u064a\u0646 \u062a\u062a\u0639\u0627\u0645\u0644 \u0645\u0639\u0647\u0645 \u0641\u064a \u0627\u0644\u0634\u0631\u0643\u0629"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-18 11:31:58.204350",
+ "modified": "2023-06-19 09:47:04.980434",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
