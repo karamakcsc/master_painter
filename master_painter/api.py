@@ -221,3 +221,44 @@ def get_qr(qr_code=None):
 # qr_code = "{qr_code}"
 
 # update_inv(qr_code=qr_code, erp_inv_name=erp_inv_name, num_items_to_add=1)
+
+
+# @frappe.whitelist()
+# def update_inv(item_code=None, erp_inv_name=None):
+#     url = f"http://xxxxxxx/api/resource/Sales Invoice/{erp_inv_name}"
+#     headers = {
+#         "Authorization": "Basic xxxxxxxxxxxxxx",
+#         "Content-Type": "application/json",
+#         "Cookie": "sid=Guest"
+#     }
+
+#     # Fetch the existing data
+#     response = requests.get(url, headers=headers)
+#     existing_data = response.json()
+
+#     # Retrieve the existing items
+#     existing_items = existing_data.get("items", [])
+
+#     # Create a new item with the provided item_code
+#     new_item = {"item_code": item_code}
+
+#     # Append the new item to the existing items
+#     existing_items.append(new_item)
+
+#     # Update the data with the new items
+#     existing_data["items"] = existing_items
+
+#     # Send the updated data in a PUT request
+#     response = requests.put(url, headers=headers, data=json.dumps(existing_data))
+
+#     print(response.text)
+
+
+# erp_inv_name = "{erp_inv_name}"
+# Item_code = "{item_code}"
+
+# update_inv(item_code=item_code, erp_inv_name=erp_inv_name)
+
+
+
+

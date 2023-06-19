@@ -30,6 +30,7 @@
   "housing",
   "home",
   "isolate",
+  "floor",
   "column_break_22",
   "ref_persone",
   "section_break_18",
@@ -256,12 +257,18 @@
    "fieldname": "ref_persone",
    "fieldtype": "Long Text",
    "label": "\u0627\u0644\u0627\u0634\u062e\u0627\u0635 \u0627\u0644\u0630\u064a\u0646 \u062a\u062a\u0639\u0627\u0645\u0644 \u0645\u0639\u0647\u0645 \u0641\u064a \u0627\u0644\u0634\u0631\u0643\u0629"
+  },
+  {
+   "default": "0",
+   "fieldname": "floor",
+   "fieldtype": "Check",
+   "label": "\u0623\u0631\u0636\u064a\u0627\u062a"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-19 09:54:49.374558",
+ "modified": "2023-06-19 10:41:17.300270",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter",
