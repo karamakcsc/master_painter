@@ -274,7 +274,7 @@ def update_inv(qr_code=None,erp_inv_name=None):
 qr_code = "{qr_code}"
 erp_inv_name = "{erp_inv_name}"
 
-update_inv(qr_code,erp_inv_name=erp_inv_name)
+update_inv(qr_code=qr_code,erp_inv_name=erp_inv_name)
 #####################################################################################################
 
 # @frappe.whitelist()
