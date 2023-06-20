@@ -225,8 +225,8 @@ def get_qr(qr_code=None):
 
 
 @frappe.whitelist()
-def update_inv(qr_code=None):
-    url = "https://ugc.kcsc.com.jo/api/resource/Painter%20Invoice/MP-SINV-2023-00004"
+def update_inv(qr_code=None,erp_inv_name=None):
+    url = "https://ugc.kcsc.com.jo/api/resource/Painter%20Invoice/{erp_inv_name}"
     headers = {
         "Authorization": "Basic NzJkNGZhMjUzNmZhMWIxOjgwYjY1NWYzNmY2MWFjYw==",
         "Content-Type": "application/json",
@@ -272,8 +272,9 @@ def update_inv(qr_code=None):
 
 # Assuming you have the value for qr_code
 qr_code = "{qr_code}"
+erp_inv_name = "{erp_inv_name}"
 
-update_inv(qr_code)
+update_inv(qr_code,erp_inv_name=erp_inv_name)
 #####################################################################################################
 
 # @frappe.whitelist()
