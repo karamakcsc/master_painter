@@ -225,8 +225,8 @@ def get_qr(qr_code=None):
 
 
 @frappe.whitelist()
-def update_inv(qr_code=None,erp_inv_name=None):
-    url = "https://ugc.kcsc.com.jo/api/resource/Painter%20Invoice/{erp_inv_name}"
+def update_inv(qr_code=None, erp_inv_name=None):
+    url = f"https://ugc.kcsc.com.jo/api/resource/Painter%20Invoice/{erp_inv_name}"
     headers = {
         "Authorization": "Basic NzJkNGZhMjUzNmZhMWIxOjgwYjY1NWYzNmY2MWFjYw==",
         "Content-Type": "application/json",
@@ -237,8 +237,12 @@ def update_inv(qr_code=None,erp_inv_name=None):
     response = requests.get(url, headers=headers)
     existing_data = response.json()
 
+    # Check if 'data' key exists in existing_data
+    if 'data' not in existing_data:
+        existing_data['data'] = {}
+
     # Retrieve the existing items
-    existing_items = existing_data.get("data", {}).get("items", [])
+    existing_items = existing_data['data'].get("items", [])
 
     # Find the first empty row index
     empty_row_index = None
@@ -259,7 +263,7 @@ def update_inv(qr_code=None,erp_inv_name=None):
         existing_items.append(new_item)
 
     # Update the data with the updated items
-    existing_data["data"]["items"] = existing_items
+    existing_data['data']["items"] = existing_items
 
     # Send the updated data in a PUT request
     response = requests.put(url, headers=headers, data=json.dumps(existing_data))
@@ -274,7 +278,9 @@ def update_inv(qr_code=None,erp_inv_name=None):
 qr_code = "{qr_code}"
 erp_inv_name = "{erp_inv_name}"
 
-update_inv(qr_code=qr_code,erp_inv_name=erp_inv_name)
+update_inv(qr_code, erp_inv_name=erp_inv_name)
+
+
 #####################################################################################################
 
 # @frappe.whitelist()
