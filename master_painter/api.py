@@ -226,12 +226,12 @@ def get_qr(qr_code=None):
 
 @frappe.whitelist()
 def update_inv(qr_code=None):
-    # url = "https://ugc.kcsc.com.jo/api/resource/Painter%20Invoice/MP-SINV-2023-00004"
-    # headers = {
-    #     "Authorization": "Basic NzJkNGZhMjUzNmZhMWIxOjgwYjY1NWYzNmY2MWFjYw==",
-    #     "Content-Type": "application/json",
-    #     "Cookie": "sid=Guest"
-    # }
+    url = "https://ugc.kcsc.com.jo/api/resource/Painter%20Invoice/MP-SINV-2023-00004"
+    headers = {
+        "Authorization": "Basic NzJkNGZhMjUzNmZhMWIxOjgwYjY1NWYzNmY2MWFjYw==",
+        "Content-Type": "application/json",
+        "Cookie": "sid=Guest"
+    }
 
     # Fetch the existing data
     response = requests.get(url, headers=headers)
