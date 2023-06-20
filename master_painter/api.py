@@ -223,11 +223,64 @@ def get_qr(qr_code=None):
 # update_inv(qr_code=qr_code, erp_inv_name=erp_inv_name, num_items_to_add=1)
 
 
+
+@frappe.whitelist()
+def update_inv(qr_code=None):
+    url = "https://ugc.kcsc.com.jo/api/resource/Painter%20Invoice/MP-SINV-2023-00004"
+    headers = {
+        "Authorization": "Basic NzJkNGZhMjUzNmZhMWIxOjgwYjY1NWYzNmY2MWFjYw==",
+        "Content-Type": "application/json",
+        "Cookie": "sid=Guest"
+    }
+
+    # Fetch the existing data
+    response = requests.get(url, headers=headers)
+    existing_data = response.json()
+
+    # Retrieve the existing items
+    existing_items = existing_data.get("data", {}).get("items", [])
+
+    # Find the first empty row index
+    empty_row_index = None
+    for i, item in enumerate(existing_items):
+        if not item.get("qr_code"):
+            empty_row_index = i
+            break
+
+    # Check if an empty row was found
+    if empty_row_index is not None:
+        # Update the empty row with the new qr_code
+        existing_items[empty_row_index]["qr_code"] = qr_code
+    else:
+        # Create a new item with the qr_code
+        new_item = {"qr_code": qr_code}
+
+        # Insert the new item at the end of the list
+        existing_items.append(new_item)
+
+    # Update the data with the updated items
+    existing_data["data"]["items"] = existing_items
+
+    # Send the updated data in a PUT request
+    response = requests.put(url, headers=headers, data=json.dumps(existing_data))
+
+    if response.status_code == 200:
+        print("Data successfully written to the database.")
+    else:
+        print(f"Failed to write data to the database. Response: {response.text}")
+
+
+# Assuming you have the value for qr_code
+qr_code = "{qr_code}"
+
+update_inv(qr_code)
+#####################################################################################################
+
 # @frappe.whitelist()
-# def update_inv(item_code=None, erp_inv_name=None):
-#     url = f"http://xxxxxxx/api/resource/Sales Invoice/{erp_inv_name}"
+# def update_inv(qr_code=None, erp_inv_name=None, APIresponse=None):
+#     url = f"https://ugc.kcsc.com.jo/api/resource/Painter%20Invoice/{erp_inv_name}"
 #     headers = {
-#         "Authorization": "Basic xxxxxxxxxxxxxx",
+#         "Authorization": "Basic NzJkNGZhMjUzNmZhMWIxOjgwYjY1NWYzNmY2MWFjYw==",
 #         "Content-Type": "application/json",
 #         "Cookie": "sid=Guest"
 #     }
@@ -237,28 +290,40 @@ def get_qr(qr_code=None):
 #     existing_data = response.json()
 
 #     # Retrieve the existing items
-#     existing_items = existing_data.get("items", [])
+#     existing_items = existing_data.get("data", {}).get("items", [])
 
-#     # Create a new item with the provided item_code
-#     new_item = {"item_code": item_code}
+#     # Find the first empty row index
+#     empty_row_index = None
+#     for i, item in enumerate(existing_items):
+#         if not item.get("qr_code"):
+#             empty_row_index = i
+#             break
 
-#     # Append the new item to the existing items
-#     existing_items.append(new_item)
+#     # Check if an empty row was found
+#     if empty_row_index is not None:
+#         # Update the empty row with the new qr_code
+#         existing_items[empty_row_index]["qr_code"] = APIresponse
+#     else:
+#         # Create a new item with the qr_code
+#         new_item = {"qr_code": APIresponse}
 
-#     # Update the data with the new items
-#     existing_data["items"] = existing_items
+#         # Insert the new item at the end of the list
+#         existing_items.append(new_item)
+
+#     # Update the data with the updated items
+#     existing_data["data"]["items"] = existing_items
 
 #     # Send the updated data in a PUT request
-#     response = requests.put(url, headers=headers, data=json.dumps(existing_data))
+#     response = requests.put(url, headers=headers, json=existing_data)  # Use 'json' parameter instead of 'data'
 
-#     print(response.text)
-
-
-# erp_inv_name = "{erp_inv_name}"
-# Item_code = "{item_code}"
-
-# update_inv(item_code=item_code, erp_inv_name=erp_inv_name)
+#     if response.status_code == 200:
+#         print("Data successfully written to the database.")
+#     else:
+#         print(f"Failed to write data to the database. Response: {response.text}")
 
 
+# # Assuming you have the values for APIresponse and erp_inv_name
+# APIresponse = "APIresponse"
+# erp_inv_name = "erp_inv_name"
 
-
+# update_inv(qr_code=APIresponse, erp_inv_name=erp_inv_name)
