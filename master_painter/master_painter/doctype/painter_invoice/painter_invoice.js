@@ -67,6 +67,10 @@ frappe.ui.form.on('Painter Sales Item', {
     },
     selling_rate: function(frm, cdt, cdn) {
         update_total_points(frm);
+    },
+    validate: function(frm, cdt, cdn) {
+        update_total_points(frm);
+        refresh_fields(frm);
     }
 });
 function update_total_points(frm) {
