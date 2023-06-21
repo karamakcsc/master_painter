@@ -8,12 +8,13 @@
  "field_order": [
   "qr_code",
   "item_number",
-  "item_name",
-  "item_category",
-  "column_break_5",
-  "point_amount",
   "sys_rate",
+  "point_amount",
+  "column_break_5",
+  "item_category",
+  "item_name",
   "selling_rate",
+  "item_volume",
   "price_diff"
  ],
  "fields": [
@@ -74,12 +75,19 @@
   {
    "fieldname": "column_break_5",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_volume",
+   "fieldtype": "Float",
+   "label": "Item Volume",
+   "precision": "4",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-06-17 21:41:26.938315",
+ "modified": "2023-06-21 10:48:21.347903",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter Sales Item",

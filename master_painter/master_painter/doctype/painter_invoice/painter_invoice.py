@@ -27,22 +27,6 @@ def get_painter_name(painter_mobile=None):
         return 0
     doc.save()
 
-# @frappe.whitelist()
-# def get_painter_store(painter_mobile=None):
-#     result = frappe.get_list(
-#         "Painter",
-#         filters={'name': painter_mobile},
-#         fields=['store'],
-#         order_by='creation DESC',
-#         limit=1
-#     )
-
-#     if result:
-#         return result[0].store
-#     else:
-#         return 0
-#     doc.save()
-
 
 @frappe.whitelist()
 def get_painter_level(painter_mobile=None):
@@ -88,4 +72,8 @@ def set_item_details(doc, method):
             item_category = frappe.get_doc("Master Painter Item", {"item_number": item_qr.item_number})
             if item_category:
                 row.item_category = item_category.item_category
+
+            item_volume = frappe.get_doc("Master Painter Item", {"item_number": item_qr.item_number})
+            if item_volume:
+                row.item_volume = item_category.item_volume
     doc.save()

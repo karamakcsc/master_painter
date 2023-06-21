@@ -24,23 +24,6 @@ frappe.ui.form.on('Painter Invoice', {
 });
 
 
-
-// frappe.ui.form.on('Painter Invoice', {
-//     onload: function(frm) {
-// 		// frappe.msgprint("hi")
-//         frappe.call({
-//             method: "master_painter.master_painter.doctype.painter_invoice.painter_invoice.get_painter_store",
-//             args: {
-//                 painter_mobile: frm.doc.painter_mobile
-//             },
-//             callback: function(r) {
-// 				frm.set_value('mc_name', r.message);
-//             }
-//         });
-//     }
-// });
-
-
 frappe.ui.form.on('Painter Invoice', {
     onload: function(frm) {
         if (frm.doc.docstatus === 0) {
@@ -89,7 +72,7 @@ frappe.ui.form.on('Painter Sales Item', {
 function update_total_points(frm) {
     var total = 0;
     frm.doc.items.forEach(function(d) {
-        total += flt(d.point_amount);
+        total += flt(d.point_amount * d.item_volume);
     });
     frm.set_value('total_points', total);
     refresh_field("total_points");
@@ -101,6 +84,10 @@ frappe.ui.form.on('Painter Sales Item', {
         refresh_fields(frm);
     },
     selling_rate: function(frm, cdt, cdn) {
+        update_total_diff_rate(frm);
+        refresh_fields(frm);
+    },
+    validate: function(frm, cdt, cdn) {
         update_total_diff_rate(frm);
         refresh_fields(frm);
     }
