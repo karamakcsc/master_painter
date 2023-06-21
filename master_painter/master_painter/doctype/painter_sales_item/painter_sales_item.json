@@ -8,11 +8,11 @@
  "field_order": [
   "qr_code",
   "item_number",
-  "sys_rate",
+  "item_name",
   "point_amount",
   "column_break_5",
   "item_category",
-  "item_name",
+  "sys_rate",
   "selling_rate",
   "item_volume",
   "price_diff"
@@ -87,7 +87,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-06-21 10:48:21.347903",
+ "modified": "2023-06-21 11:05:05.344304",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Painter Sales Item",
