@@ -61,56 +61,6 @@ frappe.ui.form.on("Painter Sales Item", "selling_rate", function(frm, cdt, cdn) 
         });
 });
 
-frappe.ui.form.on('Painter Sales Item', {
-    items_remove: function(frm, cdt, cdn) {
-        update_total_points(frm);
-    },
-    selling_rate: function(frm, cdt, cdn) {
-        update_total_points(frm);
-    },
-    validate: function(frm, cdt, cdn) {
-        update_total_points(frm);
-        refresh_fields(frm);
-    }
-});
-function update_total_points(frm) {
-    var total = 0;
-    frm.doc.items.forEach(function(d) {
-        total += flt(d.point_amount * d.item_volume);
-    });
-    frm.set_value('total_points', total);
-    refresh_field("total_points");
-}
-
-frappe.ui.form.on('Painter Sales Item', {
-    items_remove: function(frm, cdt, cdn) {
-        update_total_diff_rate(frm);
-        refresh_fields(frm);
-    },
-    selling_rate: function(frm, cdt, cdn) {
-        update_total_diff_rate(frm);
-        refresh_fields(frm);
-    },
-    validate: function(frm, cdt, cdn) {
-        update_total_diff_rate(frm);
-        refresh_fields(frm);
-    }
-});
-
-function update_total_diff_rate(frm) {
-    var total = 0;
-    frm.doc.items.forEach(function(d) {
-        total += flt(d.price_diff);
-    });
-    frm.set_value('total_diff', total);
-}
-
-function refresh_fields(frm) {
-    frm.refresh_field('total_diff');
-}
-
-
-
 
 frappe.ui.form.on("Painter Sales Item", "selling_rate", function(frm, cdt, cdn) {
     var d = locals[cdt][cdn];
@@ -123,37 +73,66 @@ if (d.qr_code)  {
 });
 
 
-frappe.ui.form.on('Painter Sales Item', {
-    items_remove: function(frm, cdt, cdn) {
-        update_total_sys_rate(frm);
-    },
-    selling_rate: function(frm, cdt, cdn) {
-        update_total_sys_rate(frm);
-    }
-});
-function update_total_sys_rate(frm) {
-    var total = 0;
-    frm.doc.items.forEach(function(d) {
-        total += flt(d.sys_rate);
-    });
-    frm.set_value('total_sys_rate', total);
-    refresh_field("total_sys_rate");
-}
 
-
-frappe.ui.form.on('Painter Sales Item', {
-    items_remove: function(frm, cdt, cdn) {
+frappe.ui.form.on("Painter Sales Item", {
+    refresh: function(frm) {
         update_total_selling_rate(frm);
+        update_total_sys_rate(frm);
+        update_total_points(frm);
+        update_total_diff_rate(frm);
+    },
+    validate: function(frm) {
+        update_total_selling_rate(frm);
+        update_total_sys_rate(frm);
+        update_total_points(frm);
+        update_total_diff_rate(frm);
     },
     selling_rate: function(frm, cdt, cdn) {
         update_total_selling_rate(frm);
+        update_total_sys_rate(frm);
+        update_total_points(frm);
+        update_total_diff_rate(frm);
+    },
+    items_remove: function(frm, cdt, cdn) {
+        update_total_selling_rate(frm);
+        update_total_sys_rate(frm);
+        update_total_points(frm);
+        update_total_diff_rate(frm);
     }
 });
-function update_total_selling_rate(frm) {
+
+var update_total_selling_rate = function(frm) {
     var total = 0;
     frm.doc.items.forEach(function(d) {
         total += flt(d.selling_rate);
     });
     frm.set_value('total_selling_rate', total);
     refresh_field("total_selling_rate");
-}
+};
+
+var update_total_sys_rate = function(frm) {
+    var total = 0;
+    frm.doc.items.forEach(function(d) {
+        total += flt(d.sys_rate);
+    });
+    frm.set_value('total_sys_rate', total);
+    refresh_field("total_sys_rate");
+};
+
+var update_total_points = function(frm) {
+    var total = 0;
+    frm.doc.items.forEach(function(d) {
+        total += flt(d.point_amount * d.item_volume);
+    });
+    frm.set_value('total_points', total);
+    refresh_field("total_points");
+};
+
+var update_total_diff_rate = function(frm) {
+    var total = 0;
+    frm.doc.items.forEach(function(d) {
+        total += flt(d.price_diff);
+    });
+    frm.set_value('total_diff', total);
+    refresh_field("total_diff");
+};
