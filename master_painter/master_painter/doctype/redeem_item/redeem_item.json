@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2023-07-08 16:13:43.858887",
+ "creation": "2023-07-08 20:14:22.495721",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -9,6 +9,7 @@
  "field_order": [
   "sales_invoive_no",
   "posting_date",
+  "column_break_os4dm",
   "total_point",
   "redeem_point"
  ],
@@ -26,6 +27,10 @@
    "in_list_view": 1,
    "label": "Posting Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_os4dm",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "total_point",
@@ -46,10 +51,10 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-07-08 16:13:43.858887",
+ "modified": "2023-07-08 20:14:22.495721",
  "modified_by": "Administrator",
  "module": "Master Painter",
- "name": "Remeed Item",
+ "name": "Redeem Item",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",
