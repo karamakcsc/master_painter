@@ -10,12 +10,17 @@
   "naming_series",
   "painter_mobile",
   "redeem_point",
+  "point_balance",
   "column_break_3",
   "redeem_date",
   "painter_name",
   "point_after_redeem",
   "section_break_5dkkv",
   "sales_invoices",
+  "section_break_eueai",
+  "total_points",
+  "column_break_txwcc",
+  "total_redeem_point",
   "amended_from"
  ],
  "fields": [
@@ -50,9 +55,11 @@
    "label": "Redeem Point"
   },
   {
+   "default": "0",
    "fieldname": "point_after_redeem",
    "fieldtype": "Float",
-   "label": "Points After Redeemtion"
+   "label": "Points After Redeemtion",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -76,12 +83,42 @@
    "fieldtype": "Table",
    "label": "Sales Invoices",
    "options": "Remeed Item"
+  },
+  {
+   "default": "0",
+   "fieldname": "point_balance",
+   "fieldtype": "Float",
+   "label": "Point Balance",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_eueai",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_points",
+   "fieldtype": "Float",
+   "label": "Total Points",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_txwcc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_redeem_point",
+   "fieldtype": "Float",
+   "label": "Total Redeem Point",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-07-05 17:56:05.562783",
+ "modified": "2023-07-08 16:48:49.485502",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Redeem",
