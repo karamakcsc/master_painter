@@ -142,5 +142,23 @@ frappe.ui.form.on("Redeem", {
             frappe.msgprint('Total Redeem Point is not equal The Redeem Point');
             validated = false;
         }
+        if (frm.doc.redeem_point > frm.doc.point_balance) {
+            frappe.msgprint('Redeem Point Greater Than Point Balance');
+            validated = false;
+        }
     }
+});
+
+frappe.ui.form.on("Remeed Item", "redeem_point", function(frm, cdt, cdn) {
+    var d = locals[cdt][cdn];
+    if (d.redeem_point > d.total_point) {
+        frappe.msgprint('Redeem Point In Sales Invoice Greater Than Total Point In Sales Invoice');
+        validated = false;
+    }
+});
+
+frappe.ui.form.on("Remeed Item", "sales_invoive_no", function(frm, cdt, cdn) {
+    var d = locals[cdt][cdn];
+        d.redeem_point = d.total_point;
+        refresh_field("sales_invoices"); 
 });
