@@ -1,91 +1,68 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:",
- "creation": "2023-06-18 13:01:17.283486",
+ "autoname": "format:{posting_date}-{ref}",
+ "creation": "2023-07-06 11:19:49.573106",
+ "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "naming_series",
-  "painter_mobile",
-  "redeem_point",
-  "column_break_3",
-  "redeem_date",
-  "painter_name",
-  "point_after_redeem",
-  "section_break_5dkkv",
-  "sales_invoices",
+  "ref",
+  "column_break_fbpxp",
+  "posting_date",
+  "section_break_w2nlk",
+  "qr_codes",
   "amended_from"
  ],
  "fields": [
   {
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "label": "RedeenID",
-   "options": "MP-RED-.YYYY.-MM.-"
-  },
-  {
-   "fieldname": "painter_mobile",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Painter Mobile",
-   "options": "Painter",
-   "reqd": 1
-  },
-  {
-   "fieldname": "painter_name",
-   "fieldtype": "Data",
-   "label": "Painter Name"
-  },
-  {
    "default": "Today",
-   "fieldname": "redeem_date",
-   "fieldtype": "Read Only",
-   "label": "Redeem Date"
-  },
-  {
-   "fieldname": "redeem_point",
-   "fieldtype": "Float",
-   "label": "Redeem Point"
-  },
-  {
-   "fieldname": "point_after_redeem",
-   "fieldtype": "Float",
-   "label": "Points After Redeemtion"
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Redeem",
+   "options": "QR Generation",
    "print_hide": 1,
    "read_only": 1
   },
   {
-   "fieldname": "column_break_3",
+   "fieldname": "column_break_fbpxp",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_5dkkv",
+   "fieldname": "section_break_w2nlk",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "sales_invoices",
+   "fieldname": "qr_codes",
    "fieldtype": "Table",
-   "label": "Sales Invoices",
-   "options": "Remeed Item"
+   "label": "QR Codes",
+   "options": "QR Generation Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ref",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "References",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-07-05 17:56:05.562783",
+ "modified": "2023-07-08 03:50:09.055836",
  "modified_by": "Administrator",
  "module": "Master Painter",
- "name": "Redeem",
- "naming_rule": "By \"Naming Series\" field",
+ "name": "QR Generation",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

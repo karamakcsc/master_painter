@@ -49,7 +49,13 @@ app_license = "MIT"
 
 # Generators
 # ----------
-
+# add methods and filters to jinja environment
+jinja = {
+	"methods": [
+		"master_painter.qr_code.get_qr_code"
+	],
+	# "filters": "qr_demo.utils.jinja_filters"
+}
 # automatically create page for each record of this doctype
 # website_generators = ["Web Page"]
 
