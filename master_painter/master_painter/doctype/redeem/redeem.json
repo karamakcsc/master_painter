@@ -19,6 +19,7 @@
   "sales_invoices",
   "section_break_eueai",
   "total_points",
+  "total_redeem_amount",
   "column_break_txwcc",
   "total_redeem_point",
   "amended_from"
@@ -28,7 +29,7 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "RedeenID",
-   "options": "MP-RED-.YYYY.-MM.-"
+   "options": "MP-RED-.YYYY-.MM-."
   },
   {
    "fieldname": "painter_mobile",
@@ -113,12 +114,19 @@
    "fieldtype": "Float",
    "label": "Total Redeem Point",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_redeem_amount",
+   "fieldtype": "Float",
+   "label": "Total Redeem Amount",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-07-08 20:14:55.655754",
+ "modified": "2023-07-09 15:17:54.123770",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Redeem",

@@ -7,20 +7,15 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "sales_invoive_no",
+  "sales_invoice_no",
   "posting_date",
+  "point_rate",
   "column_break_os4dm",
   "total_point",
-  "redeem_point"
+  "redeem_point",
+  "redeem_amount"
  ],
  "fields": [
-  {
-   "fieldname": "sales_invoive_no",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Sales Invoive no",
-   "options": "Painter Invoice"
-  },
   {
    "fieldname": "posting_date",
    "fieldtype": "Date",
@@ -46,12 +41,35 @@
    "in_list_view": 1,
    "label": "Redeem Point",
    "precision": "3"
+  },
+  {
+   "default": "0",
+   "fieldname": "point_rate",
+   "fieldtype": "Float",
+   "label": "Point Rate",
+   "precision": "6",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_invoice_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Invoice No",
+   "options": "Painter Invoice"
+  },
+  {
+   "default": "0",
+   "fieldname": "redeem_amount",
+   "fieldtype": "Float",
+   "label": "Redeem Amount",
+   "precision": "5",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-07-08 20:14:22.495721",
+ "modified": "2023-07-09 15:13:40.103574",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "Redeem Item",

@@ -35,7 +35,7 @@ function painter_name(frm) {
 
 frappe.ui.form.on('Redeem', {
 	setup: function(frm) {
-		frm.set_query("sales_invoive_no", "sales_invoices", function(doc, cdt, cdn) {
+		frm.set_query("sales_invoice_no", "sales_invoices", function(doc, cdt, cdn) {
 			let d = locals[cdt][cdn];
 			return {
 				filters: [
@@ -49,9 +49,9 @@ frappe.ui.form.on('Redeem', {
 });
 
 
-frappe.ui.form.on("Redeem Item", "sales_invoive_no", function(frm, cdt, cdn) {
+frappe.ui.form.on("Redeem Item", "sales_invoice_no", function(frm, cdt, cdn) {
     var d = locals[cdt][cdn];
-    frappe.db.get_value("Painter Invoice", d.sales_invoive_no, "posting_date", function(value) {
+    frappe.db.get_value("Painter Invoice", d.sales_invoice_no, "posting_date", function(value) {
         d.posting_date = value.posting_date;
         refresh_field("sales_invoices"); 
     });
@@ -83,9 +83,9 @@ function get_point_amount(frm) {
 }
 
 
-frappe.ui.form.on("Redeem Item", "sales_invoive_no", function(frm, cdt, cdn) {
+frappe.ui.form.on("Redeem Item", "sales_invoice_no", function(frm, cdt, cdn) {
     var d = locals[cdt][cdn];
-    frappe.db.get_value("Painter Invoice", d.sales_invoive_no, "total_points", function(value) {
+    frappe.db.get_value("Painter Invoice", d.sales_invoice_no, "total_points", function(value) {
         d.total_point = value.total_points;
         refresh_field("sales_invoices"); 
     });
@@ -97,19 +97,23 @@ frappe.ui.form.on("Redeem", {
         update_point_after_redeem(frm);
         update_total_points(frm);
         update_total_redeem_point(frm);
+        update_total_redeem_amount(frm);
     },
     validate: function(frm) {
         update_point_after_redeem(frm);
         update_total_points(frm);
         update_total_redeem_point(frm);
+        update_total_redeem_amount(frm);
     },
     redeem_point: function(frm, cdt, cdn) {
         update_total_points(frm);
         update_total_redeem_point(frm);
+        update_total_redeem_amount(frm);
     },
     items_remove: function(frm, cdt, cdn) {
         update_total_points(frm);
         update_total_redeem_point(frm);
+        update_total_redeem_amount(frm);
     }
 });
 
@@ -136,6 +140,16 @@ var  update_total_redeem_point = function(frm) {
     refresh_field("total_redeem_point");
 };
 
+var  update_total_redeem_amount = function(frm) {
+    var total = 0;
+    frm.doc.sales_invoices.forEach(function(d) {
+        total += flt(d.redeem_amount);
+    });
+    frm.set_value('total_redeem_amount', total);
+    refresh_field("total_redeem_amount");
+};
+
+
 frappe.ui.form.on("Redeem", {
     validate: function(frm) {
         if (frm.doc.total_redeem_point !== frm.doc.redeem_point) {
@@ -157,8 +171,20 @@ frappe.ui.form.on("Redeem Item", "redeem_point", function(frm, cdt, cdn) {
     }
 });
 
-frappe.ui.form.on("Redeem Item", "sales_invoive_no", function(frm, cdt, cdn) {
+frappe.ui.form.on("Redeem Item", "sales_invoice_no", function(frm, cdt, cdn) {
     var d = locals[cdt][cdn];
         d.redeem_point = d.total_point;
         refresh_field("sales_invoices"); 
+});
+
+
+
+frappe.ui.form.on("Redeem Item", "sales_invoice_no", function(frm, cdt, cdn) {
+    var d = locals[cdt][cdn];
+    frappe.db.get_single_value("Redeem Setting", "point_rate")
+        .then(function(value) {
+            d.point_rate = value;
+            d.redeem_amount = flt(d.point_rate  * d.redeem_point)
+            refresh_field("sales_invoices");
+        });
 });
