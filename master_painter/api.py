@@ -137,7 +137,7 @@ def get_qr(qr_code=None):
 def update_inv(qr_code=None, erp_inv_name=None):
     url = f"https://ugc.kcsc.com.jo/api/resource/Painter%20Invoice/{erp_inv_name}"
     headers = {
-        "Authorization": "Basic NzJkNGZhMjUzNmZhMWIxOjUwOTQ5YWU1ZDRmNTc5Mw==",
+        "Authorization": "Basic NzJkNGZhMjUzNmZhMWIxOjc4YTdjN2EzY2ZjYjZmZA==",
         "Content-Type": "application/json",
         "Cookie": "sid=Guest"
     }
