@@ -41,3 +41,5 @@ def MasterPainterQRLibrary(item_number, item_name, title,name):
         .update(entry)
         .insert(ignore_permissions=True, ignore_mandatory=True)).run_method('save')
     frappe.db.commit()
+    
+#siam
