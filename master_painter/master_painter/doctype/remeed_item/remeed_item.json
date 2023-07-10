@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-06-26 11:14:11.279505",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sales_invoive_no",
+  "posting_date",
+  "total_point",
+  "redeem_point"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_invoive_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Invoive no",
+   "options": "Painter Invoice"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_point",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Point",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "redeem_point",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Redeem Point",
+   "precision": "3"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-06-26 11:14:11.279505",
+ "modified_by": "Administrator",
+ "module": "Master Painter",
+ "name": "Remeed Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
