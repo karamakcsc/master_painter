@@ -31,8 +31,6 @@ function painter_name(frm) {
     }
 }
 
-
-
 frappe.ui.form.on('Redeem', {
 	setup: function(frm) {
 		frm.set_query("sales_invoice_no", "sales_invoices", function(doc, cdt, cdn) {
@@ -40,7 +38,7 @@ frappe.ui.form.on('Redeem', {
 			return {
 				filters: [
 					['Painter Invoice', 'docstatus', '=', 1],
-					['Painter Invoice', 'is_reedem', '=', 0],
+					['Painter Invoice', 'is_redeem', '=', 0],
 					['Painter Invoice', 'painter_mobile', '=', frm.doc.painter_mobile]
 				]
 			};
@@ -188,3 +186,50 @@ frappe.ui.form.on("Redeem Item", "sales_invoice_no", function(frm, cdt, cdn) {
             refresh_field("sales_invoices");
         });
 });
+
+
+
+
+
+//////////Test////////////////
+
+// frappe.ui.form.on('Redeem', {
+//     on_submit: function(frm) {
+//         if (frm.doc.docstatus === 0) {
+//             frm.doc.sales_invoices.forEach(function(row) {
+//                 frappe.call({
+//                     method: "master_painter.master_painter.doctype.redeem.redeem.update_inv_after_redeem",
+//                     args: {
+//                         name: row.sales_invoice_no
+//                     },
+//                     callback: function(response) {
+//                         if (!response.exc && response.message.is_redeem_updated) {
+//                             frappe.msgprint("Painter Invoice updated successfully.");
+//                         }
+//                     }
+//                 });
+//             });
+//         }
+//     }
+// });
+
+// frappe.ui.form.on("Redeem Item", {
+//     on_submit: function(frm, cdt, cdn) {
+//         var d = locals[cdt][cdn];
+//                 frappe.call({
+//                     method: "master_painter.master_painter.doctype.redeem.redeem.update_inv_after_redeem",
+//                     args: {
+//                         name: d.sales_invoice_no
+//                     },
+//                     callback: function(response) {
+//                         if (response.message && response.message.is_redeem_updated) {
+//                             frappe.msgprint("Painter Invoice updated successfully.");
+//                         }
+//                     }
+//                 });
+//     }
+// });
+
+
+
+//////////Test////////////////

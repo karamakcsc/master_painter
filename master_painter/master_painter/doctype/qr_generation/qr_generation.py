@@ -13,7 +13,7 @@ class QRGeneration(Document):
         super(QRGeneration, self).__init__(*args, **kwargs)
     def on_submit(self):
         for qr_code in self.qr_codes:
-            MasterPainterQRLibrary(qr_code.item_number, qr_code.item_name, qr_code.title)
+            MasterPainterQRLibrary(qr_code.item_number, qr_code.item_name, qr_code.title,self.name)
     
     def validate(self):
         for qr_code in self.qr_codes:
@@ -30,11 +30,12 @@ class QRGeneration(Document):
         return random_string
 
 @frappe.whitelist()
-def MasterPainterQRLibrary(item_number, item_name, title):
+def MasterPainterQRLibrary(item_number, item_name, title,name):
     entry = {
         "qr_code": title,
         "item_number": item_number,
-        "item_name": item_name
+        "item_name": item_name,
+        "ref": name
     }
     (frappe.new_doc("Master Painter QR Library")
         .update(entry)

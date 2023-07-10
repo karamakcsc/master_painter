@@ -43,14 +43,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "item_number",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Item Number",
-   "options": "Master Painter Item",
-   "reqd": 1
-  },
-  {
    "fieldname": "title",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -63,13 +55,20 @@
    "hidden": 1,
    "label": "QR Code Format",
    "read_only": 1
+  },
+  {
+   "fieldname": "item_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Number",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-07-08 04:55:05.074895",
+ "modified": "2023-07-10 22:01:37.353185",
  "modified_by": "Administrator",
  "module": "Master Painter",
  "name": "QR Generation Item",
